@@ -127,23 +127,22 @@ footer p {
     margin-top: 0;
 }
 
-.project-button {
+.project-button-a {
     display: block;
-    width: 100%;
-    padding: 20px 0;
+    padding: 40px 0;
     background-color: #9dacbc;
     color: #fff;
     text-align: center;
     text-decoration: none;
     border-radius: 0 0 20px 20px;
     transition: background-color 0.3s ease;
-    border: none; /* Remove the border */
-    box-sizing: border-box; /* Include padding and border in the width */
+    border: none;
 }
 
-.project-button:hover {
+.project-button-a:hover {
     background-color: #8399a9;
 }
 .button:focus {
     background-color: #7e8994;
+
 }
