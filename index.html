@@ -1,16 +1,20 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaiōga's Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="index-page">
+
     <header>
         <div class="container">
-            <h1>Kaiōga's Portfolio</h1>
+            <div class="menu-button" onclick="openNav()">&#9776;</div>
+            <span id="dynamic-text"></span>
             <nav>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -18,6 +22,29 @@
             </nav>
         </div>
     </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Introduction</h2>
+            <div id="dynamic-text"></div>
+            <div class="static-text">
+                <p>Welcome to my portfolio. I am a programmer passionate about games, apps, and websites.</p>
+            </div>
+            <div class="button-container">
+                <a href="#about" class="button">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    </section>
 
     <section id="about">
         <div class="container">
@@ -40,10 +67,55 @@
         </div>
     </section>
 
+    <script>
+        const dynamicText = document.querySelector('.hero h2');
+        const variants = ["Hi, I'm Kaioga", "I'm a programmer", "I'm a student", "I'm a contributor"];
+        let index = localStorage.getItem('dynamicTextIndex') ? parseInt(localStorage.getItem('dynamicTextIndex')) : 0;
+        let charIndex = localStorage.getItem('dynamicTextCharIndex') ? parseInt(localStorage.getItem('dynamicTextCharIndex')) : 0;
+    
+        function typeWriter() {
+            const text = variants[index];
+            dynamicText.textContent = text.substring(0, charIndex);
+    
+            function type() {
+                if (charIndex < text.length) {
+                    dynamicText.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    localStorage.setItem('dynamicTextCharIndex', charIndex);
+                    setTimeout(type, 100); // Typing speed
+                } else {
+                    setTimeout(erase, 2000); // Delay before erasing
+                }
+            }
+    
+            function erase() {
+                if (dynamicText.textContent.length > 0) {
+                    dynamicText.textContent = dynamicText.textContent.slice(0, -1);
+                    charIndex--;
+                    localStorage.setItem('dynamicTextCharIndex', charIndex);
+                    setTimeout(erase, 50); // Erasing speed
+                } else {
+                    index = (index + 1) % variants.length;
+                    localStorage.setItem('dynamicTextIndex', index);
+                    charIndex = 0;
+                    localStorage.setItem('dynamicTextCharIndex', charIndex);
+                    setTimeout(typeWriter, 1000); // Delay before typing next variant
+                }
+            }
+    
+            type();
+        }
+    
+        window.addEventListener('load', typeWriter); // Start typing effect on page load
+    </script>
+    
+    
+    
     <footer>
         <div class="container">
             <p>&copy; 2024 Kaiōga's Portfolio. All rights reserved.</p>
         </div>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

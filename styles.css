@@ -1,7 +1,7 @@
-/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0d47a1 25%, #42a5f5 100%);
+    color: #fff;
     line-height: 1.6;
     margin: 0;
     min-height: 100vh;
@@ -15,15 +15,34 @@ body {
     padding: 20px;
 }
 
-header {
-    background-color: #333;
+#about-a .container {
+    width: 70%;
     color: #fff;
-    padding: 10px 0;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #1a237e;
+    color: #fff;
+    height: 60px;
     text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /*border-bottom: 0.1px solid #000000; /* Add underline */
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.5em;
+}
+
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 20px;
 }
 
 nav ul {
@@ -42,19 +61,121 @@ nav ul li:last-child {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    outline: 2px solid #1c10c2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1e88e5;
+    border-color: #fff;
 }
 
 section {
     padding: 20px 0;
     flex-grow: 1;
+    text-align: left;
+    margin-left: -100px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    position: relative;
+    color: #fff;
+}
+
+section h2:not(.hero h2):not(.project-title h2)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #0f1661, transparent);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+section h2:not(.hero h2):not(.project-title h2):hover::after {
+    opacity: 0;
 }
 
 h2 {
     margin-bottom: 20px;
 }
 
+.hero {
+    background: linear-gradient(135deg, #1329ba 30%, #0d47a1 70%);
+    background-image: url('images/blue_banner.jpg');
+    background-blend-mode: overlay;
+    padding: 70px 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 350px;
+    border-radius: 0; /* Remove circled borders */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.static-text {
+    position: absolute;
+    top: calc(45% + 1em);
+    left: 39%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.hero p {
+    position: relative;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    top: -30%;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    color: #f1f1f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero .button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #42a5f5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.hero .button:hover {
+    background-color: #1e88e5;
+    transform: translateY(-2px);
+}
+
+.button-container {
+    position: absolute;
+    top: calc(50% + 2em);
+    left: 10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 footer {
-    background-color: #333;
+    background-color: #1a237e;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -68,22 +189,41 @@ footer p {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #9dacbc;
-    color: #000000;
+    background-color: #42a5f5;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-/* Styles for projects.html page only */
+.button:hover {
+    background-color: #1e88e5;
+}
+
 .project-title {
     text-align: center;
-    margin-bottom: 0; /* Adjust margin as needed */
+    margin-bottom: 0;
 }
 
 .project-title h2 {
-    color: #333; /* Adjust color as needed */
-    font-size: 44px; /* Adjust font size as needed */
+    color: #fdfdfd;
+    font-size: 44px;
+    background-color: none;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.project-title h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #969696;
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
 }
 
 .project-container {
@@ -93,20 +233,20 @@ footer p {
 }
 
 .project-wrapper {
-    width: calc(46% - 20px); /* Adjusted width to accommodate margin */
-    margin: 30px 2% 20px 2%; /* Individual margin for each project */
+    width: calc(46% - 20px);
+    margin: 30px 2% 20px 2%;
 }
 
 .project {
-    background-color: #f9f9f9;
+    background-color: #1e3a5f;
     border-radius: 0 0 20px 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 30px 2% 20px 2%; /* Individual margin for each project */
+    margin: 30px 2% 20px 2%;
     transition: transform 0.2s ease-in-out;
 }
 
 .project:hover {
-    transform: scale(1.05); /* Scale the project on hover */
+    transform: scale(1.05);
 }
 
 .project-image {
@@ -125,12 +265,13 @@ footer p {
 
 .project-details h3 {
     margin-top: 0;
+    color: #fff;
 }
 
 .project-button-a {
     display: block;
     padding: 40px 0;
-    background-color: #9dacbc;
+    background-color: #42a5f5;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -140,11 +281,11 @@ footer p {
 }
 
 .project-button-a:hover {
-    background-color: #8399a9;
+    background-color: #1e88e5;
 }
+
 .button:focus {
     background-color: #7e8994;
-
 }
 
 @media screen and (max-width: 600px) {
@@ -155,7 +296,99 @@ footer p {
     }
 
     .project-wrapper {
-        width: 100%; /* Set projects to occupy full width */
-        margin: 20px 0; /* Adjust margin between projects */
+        width: 100%;
+        margin: 20px 0;
     }
 }
+
+.menu-button {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1a237e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    left: 25px;
+    top: 4%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    margin-left: 0px;
+}
+
+#dynamic-text {
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease, left 0.5s ease;
+}
+
+#dynamic-text-no-index {
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    transition: transform 0.5s ease, left 0.5s ease;
+}
+
+.title {
+    position: relative;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #0f1661, transparent);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.title:hover::after {
+    opacity: 1;
+}
+

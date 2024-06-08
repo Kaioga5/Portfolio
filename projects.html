@@ -6,11 +6,14 @@
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
+
     <header>
         <div class="container">
-            <h1>Kaiōga's Projects</h1>
+            <div class="menu-button" onclick="openNav()">&#9776;</div>
+            <span id="dynamic-text-no-index"></span>
             <nav>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -19,6 +22,14 @@
         </div>
     </header>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
     <section class="project-title">
         <h2>Minecraft Bedrock Content</h2>
     </section>
@@ -27,7 +38,7 @@
     <div class="project-wrapper">
         <div class="project">
             <div class="project-image">
-                <img src="https://media.discordapp.net/attachments/1118185820562669568/1209226166670594058/Minecraft_1_27_2024_7_57_34_PM.png?ex=65e626a0&is=65d3b1a0&hm=a18678f84cbe50d59f4a15f668f1ca938af73d0a3f88d8eb7679589278575a26&=&format=webp&quality=lossless&width=1177&height=662" alt="Block Templates Image">
+                <img src="images/block_templates.png" alt="Block Templates Image">
             </div>
             <div class="project-details">
                 <h3>Kaioga's Block Templates</h3>
@@ -44,7 +55,7 @@
     <div class="project-wrapper">
         <div class="project">
             <div class="project-image">
-                <img src="https://media.discordapp.net/attachments/1201660163657056317/1201660279818031224/Minecraft_1_27_2024_5_56_18_PM.png?ex=65dd1558&is=65caa058&hm=19271316da6c9d2f5b27f8f5080621a776207796cdee64ba84c1ab274333b465&=&format=webp&quality=lossless&width=1177&height=662" alt="Kaioga's Project Image">
+                <img src="images/kaioga_project.png" alt="Kaioga's Project Image">
             </div>
             <div class="project-details">
                 <h3>Kaioga's Project</h3>
@@ -61,7 +72,7 @@
     <div class="project-wrapper">
         <div class="project">
             <div class="project-image">
-                <img src="https://media.discordapp.net/attachments/1070341735403749456/1070341735571533864/54A7F5BD-0228-476E-9023-1062673C9DC4.jpg?ex=65df3b6b&is=65ccc66b&hm=6ecae10f0e0cf0260a0d1bb015e4104ac0a8b1542c21d59305986d14e70e5dcf&=&format=webp&width=1177&height=662" alt="Mob Prison Image">
+                <img src="images/mob_prison.jpg" alt="Mob Prison Image">
             </div>
             <div class="project-details">
                 <h3>Mob Prison</h3>
@@ -74,13 +85,73 @@
             </div>
         </div>
     </div>
+
+    <div class="project-wrapper">
+        <div class="project">
+            <div class="project-image">
+                <img src="images/beyond_survival.png" alt="Beyond Survival Image">
+            </div>
+            <div class="project-details">
+                <h3>Beyond Survival</h3>
+                <p>🌟 A survival-expansion add-on available in the Minecraft Marketplace.<br>
+                    🛠️ Over 90 new items to enhance your gameplay.<br>
+                    🧱 Over 90 new blocks to build and explore.</p>                
+            </div>
+            <div class="project-button">
+                <a href="https://youtu.be/vMJob-XLvck?si=XInxgMsE1uDTd8f8" target="_blank" class="project-button-a">View</a>
+            </div>
+        </div>
+    </div>
 </div>
-    
+<script>
+    const dynamicText = document.getElementById('dynamic-text-no-index');
+    const variants = ["Hi, I'm Kaioga", "I'm a programmer", "I'm a student", "I'm a contributor"];
+    let index = localStorage.getItem('dynamicTextIndexNoIndex') ? parseInt(localStorage.getItem('dynamicTextIndexNoIndex')) : 0;
+    let charIndex = localStorage.getItem('dynamicTextCharIndexNoIndex') ? parseInt(localStorage.getItem('dynamicTextCharIndexNoIndex')) : 0;
+
+    function typeWriter() {
+        const text = variants[index];
+        dynamicText.textContent = text.substring(0, charIndex);
+
+        function type() {
+            if (charIndex < text.length) {
+                dynamicText.textContent += text.charAt(charIndex);
+                charIndex++;
+                localStorage.setItem('dynamicTextCharIndexNoIndex', charIndex);
+                setTimeout(type, 100); // Typing speed
+            } else {
+                setTimeout(erase, 2000); // Delay before erasing
+            }
+        }
+
+        function erase() {
+            if (dynamicText.textContent.length > 0) {
+                dynamicText.textContent = dynamicText.textContent.slice(0, -1);
+                charIndex--;
+                localStorage.setItem('dynamicTextCharIndexNoIndex', charIndex);
+                setTimeout(erase, 50); // Erasing speed
+            } else {
+                index = (index + 1) % variants.length;
+                localStorage.setItem('dynamicTextIndexNoIndex', index);
+                charIndex = 0;
+                localStorage.setItem('dynamicTextCharIndexNoIndex', charIndex);
+                setTimeout(typeWriter, 1000); // Delay before typing next variant
+            }
+        }
+
+        type();
+    }
+
+    window.addEventListener('load', typeWriter); // Start typing effect on page load
+</script>
+
+
 
     <footer>
         <div class="container">
             <p>&copy; 2024 Kaiōga's Portfolio. All rights reserved.</p>
         </div>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

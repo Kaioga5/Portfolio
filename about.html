@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <div class="container">
-            <h1>Kaioga's Portfolio</h1>
+            <div class="menu-button" onclick="openNav()">&#9776;</div>
+            <span id="dynamic-text-no-index"></span>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -20,35 +23,43 @@
         </div>
     </header>
 
-    <section id="about">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <section id="about-a">
         <div class="container">
             <section id="professional-background">
-                <h3>Professional Background</h3>
-                <p>Currently, I am proud to be a part of Piki Studios, a distinguished Minecraft Partner in the Minecraft Bedrock Edition Marketplace. At Piki Studios, I am entrusted with developing innovative Add-Ons that enrich the Minecraft experience for players worldwide.</p>
+                <h3 class="title">Professional Background</h3>
+                <p>Currently, I am proud to be a part of Piki Studios, a Minecraft Partner in the Minecraft Bedrock Edition Marketplace. At Piki Studios, I am entrusted with developing innovative content that enrich the Minecraft experience for players worldwide.</p>
             </section>
             
             <section id="skills">
-                <h3>Skills</h3>
-                <p>Proficient in a variety of programming languages and technologies, including HTML, CSS, JavaScript, and JSON, I leverage my expertise to create dynamic and engaging content for Minecraft enthusiasts.</p>
+                <h3 class="title">Skills</h3>
+                <p>Proficient in a variety of programming languages and technologies, including HTML, CSS, JavaScript, and JSON, I leverage my expertise to create unique, engaging and high-quality content for Minecraft players.</p>
             </section>
             
             <section id="multilingual-communication">
-                <h3>Multilingual Communication</h3>
-                <p>Fluent in both Spanish and English, I foster connections and bridge cultural gaps within the global Minecraft community. Effective communication is paramount to me, ensuring that ideas and solutions are conveyed clearly and inclusively.</p>
+                <h3 class="title">Multilingual Communication</h3>
+                <p>Fluent in both Spanish and English. Effective communication is important to me, and i'll make sure that ideas and solutions are conveyed clearly and inclusively.</p>
             </section>
             
             <section id="continuous-learning">
-                <h3>Continuous Learning</h3>
+                <h3 class="title">Continuous Learning</h3>
                 <p>As a dedicated student and programmer, I embrace learning as an ongoing journey. Each project, challenge, and collaboration fuels my growth and inspires me to push boundaries in the realm of game development and technology.</p>
             </section>
             
             <section id="community-engagement">
-                <h3>Community Engagement</h3>
-                <p>Beyond my professional endeavors, I actively engage with the Minecraft community. As a moderator of the Bedrock Add-Ons Discord server, I cultivate a welcoming environment where enthusiasts can share insights and collaborate on creative projects. Furthermore, I contribute to the Bedrock Wiki, striving to provide comprehensive documentation and resources for fellow developers and players alike.</p>
+                <h3 class="title">Community Engagement</h3>
+                <p>Beyond my professional endeavors, I actively engage with the Minecraft community. As a moderator of the Bedrock Add-Ons Discord server, I cultivate a welcoming environment where creators can share insights and collaborate on creative projects. Furthermore, I contribute to the Bedrock Wiki, striving to provide comprehensive documentation and resources for fellow developers and players alike.</p>
             </section>
             
             <section id="get-in-touch">
-                <h3>Get in Touch</h3>
+                <h3 class="title">Get in Touch</h3>
                 <p>Feel free to explore more about my work and contributions:</p>
                 <div class="buttons">
                     <a href="https://www.pikistudios.com/" target="_blank" class="button">Piki Studios Website</a>
@@ -59,11 +70,66 @@
             </section>
         </div>
     </section>
+    
 
+    <script>
+        const dynamicText = document.getElementById('dynamic-text-no-index');
+        const variants = ["Hi, I'm Kaioga", "I'm a programmer", "I'm a student", "I'm a contributor"];
+        let index = localStorage.getItem('dynamicTextIndexNoIndex') ? parseInt(localStorage.getItem('dynamicTextIndexNoIndex')) : 0;
+        let charIndex = localStorage.getItem('dynamicTextCharIndexNoIndex') ? parseInt(localStorage.getItem('dynamicTextCharIndexNoIndex')) : 0;
+    
+        function typeWriter() {
+            const text = variants[index];
+            dynamicText.textContent = text.substring(0, charIndex);
+    
+            function type() {
+                if (charIndex < text.length) {
+                    dynamicText.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    localStorage.setItem('dynamicTextCharIndexNoIndex', charIndex);
+                    setTimeout(type, 100); // Typing speed
+                } else {
+                    setTimeout(erase, 2000); // Delay before erasing
+                }
+            }
+    
+            function erase() {
+                if (dynamicText.textContent.length > 0) {
+                    dynamicText.textContent = dynamicText.textContent.slice(0, -1);
+                    charIndex--;
+                    localStorage.setItem('dynamicTextCharIndexNoIndex', charIndex);
+                    setTimeout(erase, 50); // Erasing speed
+                } else {
+                    index = (index + 1) % variants.length;
+                    localStorage.setItem('dynamicTextIndexNoIndex', index);
+                    charIndex = 0;
+                    localStorage.setItem('dynamicTextCharIndexNoIndex', charIndex);
+                    setTimeout(typeWriter, 1000); // Delay before typing next variant
+                }
+            }
+    
+            type();
+        }
+    
+        window.addEventListener('load', typeWriter); // Start typing effect on page load
+    
+        // Flip card script
+        document.querySelectorAll('.project-wrapper').forEach(wrapper => {
+            wrapper.addEventListener('click', () => {
+                wrapper.classList.toggle('flipped');
+            });
+        });
+    </script>
+    
+    
+    
     <footer>
         <div class="container">
             <p>&copy; 2024 Kaioga's Portfolio. All rights reserved.</p>
         </div>
     </footer>
+    <script src="scripts.js"></script>
+
+    
 </body>
 </html>
