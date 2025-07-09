@@ -1,121 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaiōga's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kaiōga's professional portfolio - game developer, programmer, and creative technologist." />
+  <title>Kaiōga | Game Developer & Programmer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="index-page">
-
-    <header>
-        <div class="container">
-            <div class="menu-button" onclick="openNav()">&#9776;</div>
-            <span id="dynamic-text"></span>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Kaiōga</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Introduction</h2>
-            <div id="dynamic-text"></div>
-            <div class="static-text">
-                <p>Welcome to my portfolio. I am a programmer passionate about games, apps, and websites.</p>
-            </div>
-            <div class="button-container">
-                <a href="#about" class="button">Learn More</a>
-            </div>
-        </div>
-    </section>
-    
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h2>Hi, I'm Kaiōga</h2>
+      <p>A Minecraft developer and creative programmer building unique digital experiences.</p>
+      <a href="#projects" class="button">View My Work</a>
+    </div>
+  </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Get to know me better! Learn about my background, skills, and what drives my passion for creating.</p>
-        </div>
-    </section>
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm a passionate Minecraft and app developer who loves turning ideas into interactive worlds. With a strong focus on Minecraft add-ons, web development, and creative scripting, I aim to blend fun, functionality, and polish into everything I build.</p>
+    </div>
+  </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <p>Explore my latest projects and creations. From web development to game design, there's something for everyone.</p>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="images/beyond_survival.png" alt="Beyond Survival" />
+          <h3>Beyond Survival</h3>
+          <p>An immersive survival experience built with custom mobs, AI, and complex mechanics for Minecraft Bedrock.</p>
         </div>
-    </section>
+        <div class="card">
+          <img src="images/block_templates.png" alt="Block Templates" />
+          <h3>Blockistry</h3>
+          <p>A Minecraft block generator app using JavaScript and JSON templates to automate content creation.</p>
+        </div>
+        <div class="card">
+          <img src="images/mob_prison.jpg" alt="Mob Prison" />
+          <h3>Mob Prison</h3>
+          <p>A Minecraft realm with over 500 users and various gameplay, such prisons, plots, and dungeons.</p>
+        </div>
+        <div class="card">
+          <img src="images/kaioga_project.png" alt="Kaioga's Project" />
+          <h3>Mob Prison</h3>
+          <p>An upcoming story-rich MMORPG within Minecraft.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Let's connect! Whether you have questions, suggestions, or collaboration ideas, I'd love to hear from you.</p>
-        </div>
-    </section>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Game Scripting (Minecraft Bedrock, JS API)</li>
+        <li>Web Development (FastAPI, Three.js, HTML/CSS/JS)</li>
+        <li>Project Leadership & Marketplace Publishing</li>
+        <li>Animation Controllers & Entity Development</li>
+      </ul>
+    </div>
+  </section>
 
-    <script>
-        const dynamicText = document.querySelector('.hero h2');
-        const variants = ["Hi, I'm Kaioga", "I'm a programmer", "I'm a student", "I'm a contributor"];
-        let index = localStorage.getItem('dynamicTextIndex') ? parseInt(localStorage.getItem('dynamicTextIndex')) : 0;
-        let charIndex = localStorage.getItem('dynamicTextCharIndex') ? parseInt(localStorage.getItem('dynamicTextCharIndex')) : 0;
-    
-        function typeWriter() {
-            const text = variants[index];
-            dynamicText.textContent = text.substring(0, charIndex);
-    
-            function type() {
-                if (charIndex < text.length) {
-                    dynamicText.textContent += text.charAt(charIndex);
-                    charIndex++;
-                    localStorage.setItem('dynamicTextCharIndex', charIndex);
-                    setTimeout(type, 100); // Typing speed
-                } else {
-                    setTimeout(erase, 2000); // Delay before erasing
-                }
-            }
-    
-            function erase() {
-                if (dynamicText.textContent.length > 0) {
-                    dynamicText.textContent = dynamicText.textContent.slice(0, -1);
-                    charIndex--;
-                    localStorage.setItem('dynamicTextCharIndex', charIndex);
-                    setTimeout(erase, 50); // Erasing speed
-                } else {
-                    index = (index + 1) % variants.length;
-                    localStorage.setItem('dynamicTextIndex', index);
-                    charIndex = 0;
-                    localStorage.setItem('dynamicTextCharIndex', charIndex);
-                    setTimeout(typeWriter, 1000); // Delay before typing next variant
-                }
-            }
-    
-            type();
-        }
-    
-        window.addEventListener('load', typeWriter); // Start typing effect on page load
-    </script>
-    
-    
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Kaiōga's Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Interested in working together? Let's chat.</p>
+      <a href="mailto:landomgonzalezbff@gmail.com" class="button">Email Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Kaiōga.</p>
+    </div>
+  </footer>
 </body>
 </html>
