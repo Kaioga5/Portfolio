@@ -1,18 +1,8 @@
 @charset "utf-8";
 
-/* ===========================================================================
-   Kaiōga — portfolio
-   ---------------------------------------------------------------------------
-   One idea: the page changes biome as you travel through the work. Every
-   project has a colour, sampled from its key art, and the whole page (paper,
-   nav, everything) drifts toward that colour while you are looking at that
-   project. The hero holds a deck of the key art; the top card sets the colour
-   you arrive on. The page ends at night.
+/* Kaiōga portfolio */
 
-   The type is Bricolage Grotesque, one family for everything.
-   =========================================================================== */
-
-/* ── fonts ────────────────────────────────────────────────────────────────── */
+/* fonts */
 
 @font-face {
   font-family: 'Bricolage Grotesque';
@@ -31,7 +21,7 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* ── tokens ───────────────────────────────────────────────────────────────── */
+/* tokens */
 
 :root {
   color-scheme: light;
@@ -53,7 +43,7 @@
   --gold: #f2b62c;
   --gold-ink: #a8730a;
 
-  /* The current biome. site.js moves it; each scene carries its own accent. */
+  /* --biome is set by site.js while scrolling */
   --biome: #3fc4a8;
   --accent: var(--biome);
   --bg: color-mix(in oklab, var(--biome) 15%, var(--paper));
@@ -78,7 +68,7 @@
   --pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── base ─────────────────────────────────────────────────────────────────── */
+/* base */
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -145,8 +135,7 @@ button { font: inherit; color: inherit; }
 }
 .skip:focus { top: 0.75rem; }
 
-/* Labels: small, tracked, sentence-case. Used for section numbers, fact
-   names and kinds. Nothing else is set in this register. */
+/* small uppercase labels */
 .label,
 .scene__tag,
 .fact dt,
@@ -162,7 +151,7 @@ button { font: inherit; color: inherit; }
   line-height: 1.4;
 }
 
-/* Links with an arrow: the underline sweeps out, the arrow steps up. */
+/* arrow links */
 .link {
   display: inline-flex;
   align-items: baseline;
@@ -188,7 +177,7 @@ button { font: inherit; color: inherit; }
 .link:hover { color: var(--accent-ink); background-size: 0% 1.5px; }
 .link:hover .arrow { transform: translate(0.18em, -0.18em); }
 
-/* ── top bar ──────────────────────────────────────────────────────────────── */
+/* top bar */
 
 .top {
   position: sticky;
@@ -244,7 +233,7 @@ button { font: inherit; color: inherit; }
 .nav a.is-current { color: var(--ink); }
 .nav a.is-current::before { transform: translateX(-50%) scale(1); }
 
-/* ── hero ─────────────────────────────────────────────────────────────────── */
+/* hero */
 
 .hero {
   display: grid;
@@ -300,9 +289,7 @@ button { font: inherit; color: inherit; }
 }
 .hero__cue:hover svg { transform: translateY(0.2em); }
 
-/* The deck: the key art of every Marketplace project, stacked. The top card
-   sets the biome; the pointer tilts the stack; a card can be sent to the back
-   with the arrows, and any card can be pulled to the front. */
+/* hero deck */
 .deck { display: grid; gap: 1rem; --px: 0; --py: 0; }
 .deck__cards {
   position: relative;
@@ -310,7 +297,7 @@ button { font: inherit; color: inherit; }
   padding: 0;
   margin: 0;
   aspect-ratio: 800 / 343;
-  margin-top: 3.5rem;   /* room for the cards fanned above the top one */
+  margin-top: 3.5rem;   /* space for the fanned cards */
 }
 .deck__card {
   position: absolute;
@@ -389,7 +376,7 @@ button { font: inherit; color: inherit; }
 .deck__btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: scale(1.06); }
 .deck__btn:active { transform: scale(0.96); }
 
-/* ── sections ─────────────────────────────────────────────────────────────── */
+/* sections */
 
 .sec { padding: clamp(4rem, 10vh, 7.5rem) var(--gutter) 0; }
 .sec--about { padding-bottom: clamp(5rem, 12vh, 9rem); }
@@ -420,7 +407,7 @@ button { font: inherit; color: inherit; }
 }
 .sec__note { margin-top: 2rem; color: var(--ink-3); text-transform: none; letter-spacing: 0; font-weight: 500; }
 
-/* ── scenes: one per project ──────────────────────────────────────────────── */
+/* scenes: one per project */
 
 .scenes { display: grid; }
 
@@ -445,10 +432,8 @@ button { font: inherit; color: inherit; }
     align-items: start;
   }
   .scene:nth-child(even) { grid-template-areas: 'head poster' 'body poster' 'reel reel'; grid-template-columns: minmax(0, 9fr) minmax(0, 11fr); }
-  /* The poster stays in view while the copy beside it is read. It sticks
-     inside its own column (`.scene__side`, stretched to the height of the
-     head and body rows) rather than the whole scene, so it can never travel
-     into the reel row; the padding keeps its art a clear 4rem above it. */
+  /* sticky inside .scene__side (not the whole scene grid), so it never reaches
+     the reel row. Bottom padding keeps a gap above the reel. */
   .scene__side { align-self: stretch; }
   .poster { position: sticky; top: 5.5rem; padding-bottom: 4rem; pointer-events: none; }
   .poster__frame { pointer-events: auto; }
@@ -478,7 +463,7 @@ button { font: inherit; color: inherit; }
 }
 .scene__text { color: var(--ink-2); }
 
-/* What I did on it: a label and one chip per role. */
+/* role chips */
 .roles {
   display: flex;
   flex-wrap: wrap;
@@ -525,9 +510,7 @@ button { font: inherit; color: inherit; }
   transform: rotate(45deg);
 }
 
-/* The facts: a project's numbers, as a small typographic strip. Dividers sit
-   between facts; the row is pulled left by one divider so a row never starts
-   with one. */
+/* facts strip. The row is shifted left by one divider so no row starts with one. */
 .facts {
   margin-top: 0.5rem;
   padding-block: 1.1rem;
@@ -588,9 +571,7 @@ button { font: inherit; color: inherit; }
 .cta:hover { background: var(--accent-ink); transform: translateY(-2px); }
 .cta:hover .arrow { transform: translate(0.15em, -0.15em); }
 
-/* The poster: the key art, whole, on a flat block of the project's colour
-   that sits a little behind it. The pointer tilts the pair and slides the
-   block the other way, and a soft light follows the cursor across the art. */
+/* poster: offset colour block + pointer tilt */
 .poster { perspective: 1400px; }
 .poster__frame {
   position: relative;
@@ -635,8 +616,7 @@ button { font: inherit; color: inherit; }
 .poster__frame.is-live::before { transition-duration: 0.25s; }
 .poster--shot .poster__frame img { aspect-ratio: 16 / 9; object-fit: cover; }
 
-/* The reel: screenshots on a strip that runs off both edges. Drag it, fling
-   it, click one to open it. It also drifts a little as it scrolls past. */
+/* screenshot reel */
 .reel {
   margin-inline: calc(-1 * var(--gutter));
   padding: 0.5rem var(--gutter);
@@ -678,15 +658,13 @@ button { font: inherit; color: inherit; }
 .reel:not(.is-dragging) .reel__frame button:hover img { transform: scale(1.035); }
 .reel__frame img { -webkit-user-drag: none; }
 @supports (animation-timeline: view()) {
-  /* The reel names its own view timeline, so the track inside it can settle
-     in from the right as the reel scrolls into view. The movement stays inside
-     the scroller, so nothing spills past the page edge. */
+  /* named view timeline: the track drifts inside the scroller, nothing overflows the page */
   .reel { view-timeline: --reel block; }
   .reel__track { animation: reel-drift linear both; animation-timeline: --reel; animation-range: entry 0% entry 100%; }
   @keyframes reel-drift { from { translate: 2.5rem 0; } to { translate: 0 0; } }
 }
 
-/* ── tools ────────────────────────────────────────────────────────────────── */
+/* tools */
 
 .sec--tools { --accent: #d8b46a; }
 
@@ -724,7 +702,7 @@ button { font: inherit; color: inherit; }
 .status::before { content: ''; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--ink-3); }
 code { font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 0.9em; color: var(--ink); }
 
-/* ── about ────────────────────────────────────────────────────────────────── */
+/* about */
 
 .sec--about { --accent: #e9a06f; }
 
@@ -749,7 +727,7 @@ code { font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-siz
 .places li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.9rem; color: var(--ink); }
 .places span { color: var(--ink-3); }
 
-/* ── night: contact and credits ───────────────────────────────────────────── */
+/* night: contact and credits */
 
 .night {
   --accent: var(--brand);
@@ -849,7 +827,7 @@ html:not(.js-live) .handle__copy { display: none; }
 }
 .credits + .credits { margin-top: 0; }
 
-/* ── lightbox ─────────────────────────────────────────────────────────────── */
+/* lightbox */
 
 .lightbox {
   position: fixed;
@@ -927,13 +905,9 @@ html:not(.js-live) .handle__copy { display: none; }
 }
 body.has-lightbox { overflow: hidden; }
 
-/* ===========================================================================
-   Motion. The page arriving; a scene settling in; everything else answers
-   the pointer or the scroll and is handled in site.js.
-   =========================================================================== */
+/* motion */
 
-/* Arriving: the greeting rises into a mask, the lead follows, the cards deal
-   themselves in from below. */
+/* page load */
 .js-ready [data-reveal] { clip-path: inset(-0.2em -0.1em -0.3em -0.1em); }
 .js-ready [data-reveal] > span {
   display: block;
@@ -959,13 +933,13 @@ body.has-lightbox { overflow: hidden; }
   75% { transform: rotate(8deg); }
 }
 
-/* Settling: a scene's poster stands up as it enters. */
+/* scene entrance */
 .js-ready [data-poster] { opacity: 0; transform: translateY(2rem) rotateX(8deg); transform-origin: 50% 100%; }
 .js-ready [data-scene].is-in [data-poster] { opacity: 1; transform: none; transition: opacity 0.6s, transform 1s var(--out); }
 .js-ready .tool { opacity: 0; transform: translateY(1.2rem); }
 .js-ready .tool.is-in { opacity: 1; transform: none; transition: opacity 0.6s, transform 0.9s var(--out); }
 
-/* ── reduced motion ───────────────────────────────────────────────────────── */
+/* reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -986,7 +960,7 @@ body.has-lightbox { overflow: hidden; }
   .wave { animation: none !important; }
 }
 
-/* ── print ────────────────────────────────────────────────────────────────── */
+/* print */
 
 @media print {
   .top, .skip, .deck__ctl, .lightbox, .hero__cue { display: none !important; }

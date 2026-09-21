@@ -1,4 +1,4 @@
-/** Identity, copy and links that are not tied to a single project. */
+/* Site-wide copy and links. */
 
 export const site = {
   name: 'Kaiōga',
@@ -61,9 +61,7 @@ export const site = {
     ],
   },
 
-  /* Discord is the way to reach me. The username is literally `kaioga.`, with
-     the trailing full stop. The server is a different thing: it is where I
-     talk to the wider community, not a DM. */
+  /* Discord username is `kaioga.` with the trailing dot. The server link is a separate thing. */
   contact: {
     heading: 'Say hi',
     lead: 'Working on something for Bedrock? Want a hand with an add-on or a tool? The quickest way to reach me is a Discord message.',

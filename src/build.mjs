@@ -1,13 +1,7 @@
-/**
- * Static site generator for the portfolio.
- *
- *   node src/build.mjs
- *
- * Reads src/data/*.mjs and writes index.html and 404.html at the repo root.
- * No dependencies: plain Node, plain template literals.
- *
- * `summary`, `text` and `credits` are written straight through so they can
- * carry inline <code>. Everything else is escaped.
+/*
+ * node src/build.mjs
+ * Builds index.html and 404.html from src/data/*.mjs. No dependencies.
+ * `summary`, `text` and `credits` are inserted as raw HTML; everything else is escaped.
  */
 
 import { writeFileSync, readFileSync } from 'node:fs';
@@ -30,8 +24,7 @@ const e = (s) =>
 const map = (xs, fn) => xs.map(fn).join('');
 const pad = (n) => String(n).padStart(2, '0');
 
-/* The list is newest first. Dated projects must actually be in that order;
-   undated ones sit wherever their comment in work.mjs says they do. */
+/* dated projects must be newest first */
 {
   const dated = work.filter((p) => p.date);
   for (let i = 1; i < dated.length; i++) {
@@ -41,7 +34,7 @@ const pad = (n) => String(n).padStart(2, '0');
   }
 }
 
-/* Cache-bust the CSS and JS so a redeploy never serves a stale pair. */
+/* cache-bust */
 const rev = (path) => {
   let h = 5381;
   const src = readFileSync(join(root, path));
@@ -49,7 +42,7 @@ const rev = (path) => {
   return `${path}?v=${h.toString(36)}`;
 };
 
-/* Image dimensions are read off the files rather than typed in. */
+/* webp dimensions */
 const sizeOf = (path) => {
   const b = readFileSync(join(root, path));
   if (b.toString('ascii', 0, 4) !== 'RIFF' || b.toString('ascii', 8, 12) !== 'WEBP') {
@@ -78,7 +71,7 @@ const img = (base, alt, { sizes, cls = '', small = 480, lazy = true, extra = '' 
      width="${w}" height="${h}" alt="${e(alt)}"${lazy ? ' loading="lazy"' : ''} decoding="${extra.includes('data-sync') ? 'sync' : 'async'}">`;
 };
 
-/* ── shared fragments ─────────────────────────────────────────────────────── */
+/* shared fragments */
 
 const mark = /* html */ `<svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
   <path d="M16 3 29 10.5 16 18 3 10.5Z" fill="var(--brand)"/>
@@ -102,7 +95,7 @@ const starRow = () =>
 const coin =
   '<svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg>';
 
-/* Small marks for the contact section. Plain shapes, one colour, currentColor. */
+/* contact icons */
 const ICON = {
   discord: '<path d="M19.3 5.4A16.6 16.6 0 0 0 15.2 4l-.5.9a15.4 15.4 0 0 0-5.4 0L8.8 4a16.6 16.6 0 0 0-4.1 1.4C2.1 9.3 1.4 13.1 1.7 16.8a16.7 16.7 0 0 0 5 2.6l1.1-1.7a10.8 10.8 0 0 1-1.7-.8l.4-.3a11.9 11.9 0 0 0 11 0l.4.3-1.7.8 1 1.7a16.7 16.7 0 0 0 5.1-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1Zm6.6 0c-1 0-1.8-.9-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1Z"/>',
   youtube: '<path d="M23 7.3a2.9 2.9 0 0 0-2-2C19.2 4.8 12 4.8 12 4.8s-7.2 0-9 .5a2.9 2.9 0 0 0-2 2C.5 9.1.5 12 .5 12s0 2.9.5 4.7a2.9 2.9 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a2.9 2.9 0 0 0 2-2c.5-1.8.5-4.7.5-4.7s0-2.9-.5-4.7ZM9.7 15.1V8.9l6 3.1-6 3.1Z"/>',
@@ -120,7 +113,7 @@ const roles = (xs) =>
 
 const year = (p) => (p.date ? p.date.slice(0, 4) : '');
 
-/* ── the hero deck ────────────────────────────────────────────────────────── */
+/* the hero deck */
 
 const deck = () => {
   const cards = work.filter((p) => p.cover);
@@ -144,7 +137,7 @@ const deck = () => {
     </div>`;
 };
 
-/* ── projects ─────────────────────────────────────────────────────────────── */
+/* projects */
 
 const fact = (label, value, cls = '') =>
   `<div class="fact${cls ? ` ${cls}` : ''}"><dt>${e(label)}</dt><dd>${value}</dd></div>`;
@@ -221,7 +214,7 @@ function project(p, i) {
     </article>`;
 }
 
-/* ── tools ────────────────────────────────────────────────────────────────── */
+/* tools */
 
 function tool(t) {
   const links = [
@@ -257,7 +250,7 @@ function tool(t) {
     </li>`;
 }
 
-/* ── page ─────────────────────────────────────────────────────────────────── */
+/* page */
 
 const firstAccent = work.find((p) => p.cover).accent;
 
@@ -288,8 +281,7 @@ const page = /* html */ `<!doctype html>
 <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${rev('assets/css/site.css')}">
 <script>
-  /* Entrance states only apply once this bet is on the table; site.js confirms
-     it, and if the script never arrives the page uncovers itself. */
+  /* js-ready enables entrance states; dropped again if site.js never runs */
   var d = document.documentElement;
   d.classList.add('js-ready');
   setTimeout(function () { if (!d.classList.contains('js-live')) d.classList.remove('js-ready'); }, 2500);
@@ -402,8 +394,7 @@ ${JSON.stringify({
 </html>
 `;
 
-/* Self-contained: GitHub Pages serves this for any missing path, at any depth,
-   so it cannot rely on a relative stylesheet resolving. */
+/* 404 is self-contained: Pages serves it at any depth */
 const notFound = /* html */ `<!doctype html>
 <html lang="en">
 <head>

@@ -1,8 +1,4 @@
-/* Kaiōga — page behaviour.
-   Everything here is an enhancement over working static HTML. Without it the
-   page is still complete: every project, every screenshot (opening in place),
-   every link. With it: the biome follows you, the deck deals and turns, the
-   posters tilt, the reels fling and open, and the page arrives in order. */
+/* Kaiōga portfolio: page behaviour. Everything here is progressive enhancement. */
 
 (() => {
   'use strict';
@@ -14,14 +10,10 @@
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
-  /* The head script optimistically set .js-ready so entrance states applied
-     before first paint; this tells it the bet paid off. */
+  /* tell the head script JS is running */
   root.classList.add('js-live');
 
-  /* ── the biome ───────────────────────────────────────────────────────────
-     One colour on the root, which everything else is mixed from. Whatever is
-     in the middle of the viewport decides it: a scene, a section, or the top
-     card of the deck while the hero is on screen. */
+  /* biome colour */
 
   const SECTION_ACCENT = { tools: '#d8b46a', about: '#e9a06f', contact: '#b8b2a6' };
   let biomeSource = null;
@@ -36,11 +28,7 @@
     else setBiome(biomeSource.dataset.accent || SECTION_ACCENT[biomeSource.dataset.section]);
   };
 
-  /* ── the deck ────────────────────────────────────────────────────────────
-     The key art of every Marketplace project, stacked. `order[0]` is on top.
-     Turning a card sends it out to the right and under the stack; pulling one
-     forward brings it out from behind and lays it on top. The pointer tilts
-     the whole stack. Left alone, it turns itself every few seconds. */
+  /* hero deck */
 
   const deck = $('[data-deck]');
   if (deck) {
@@ -59,8 +47,7 @@
         card.style.setProperty('--d', d);
         card.style.setProperty('--dir', d % 2 ? -1 : 1);
         card.classList.toggle('is-top', d === 0);
-        /* Only the first few cards behind the top one are drawn; the rest wait
-           out of sight so the fan stays a fan and not a pile. */
+        /* only draw the first six cards */
         card.classList.toggle('is-deep', d > 5);
         $('button', card).tabIndex = d === 0 ? 0 : -1;
       });
@@ -79,7 +66,7 @@
       setTimeout(swap, 180);
     };
 
-    /* Move `card` to the top by carrying it out to the side and back in. */
+    /* dir > 0: send the top card to the back. dir < 0: bring `card` to the front. */
     const rotateTo = (card, dir) => {
       if (busy) return;
       const idx = order.indexOf(card);
@@ -126,7 +113,7 @@
     deck.addEventListener('focusin', () => { paused = true; });
     deck.addEventListener('focusout', (ev) => { if (!deck.contains(ev.relatedTarget)) paused = false; });
 
-    /* The stack leans toward the pointer while it is over the hero. */
+    /* pointer parallax */
     const hero = deck.closest('.hero');
     if (hero && hovering.matches && !reduced.matches) {
       let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
@@ -153,9 +140,7 @@
     schedule();
   }
 
-  /* ── arriving ────────────────────────────────────────────────────────────
-     The greeting is uncovered once the fonts are in, so it is never uncovered
-     in the wrong face; the cards deal in after it. */
+  /* page load, after fonts */
 
   const ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
   ready.then(() => {
@@ -170,7 +155,7 @@
     });
   });
 
-  /* ── scenes and tools settle in as they arrive ───────────────────────── */
+  /* entrance on scroll */
 
   const settlers = $$('[data-scene], .tool');
   if ('IntersectionObserver' in window && !reduced.matches) {
@@ -189,9 +174,7 @@
     settlers.forEach((el) => el.classList.add('is-in'));
   }
 
-  /* ── where the reader is ─────────────────────────────────────────────────
-     A band across the middle of the viewport. Whatever crosses it sets the
-     biome; whichever section it belongs to lights the nav. */
+  /* current section: drives the nav dot and the biome */
 
   const navLinks = $$('[data-navlink]');
   let section = null;
@@ -212,7 +195,7 @@
           const el = entry.target;
           if (entry.isIntersecting) {
             if (el.dataset.section) section = el.dataset.section;
-            /* A scene wins over the section it sits in. */
+            /* scenes beat the work section */
             if (el.dataset.scene !== undefined || el.dataset.section !== 'work') biomeSource = el;
           } else if (biomeSource === el) {
             biomeSource = null;
@@ -233,7 +216,7 @@
     stick();
   }
 
-  /* ── posters answer the pointer ──────────────────────────────────────── */
+  /* poster tilt */
 
   if (hovering.matches && !reduced.matches) {
     for (const frame of $$('[data-tilt]')) {
@@ -256,8 +239,7 @@
     }
   }
 
-  /* ── reels: drag with a mouse, fling, and let go ─────────────────────────
-     Touch keeps the browser's own scrolling, which already has momentum. */
+  /* reel drag + fling for mouse/pen. Touch uses native scrolling. */
 
   for (const reel of $$('[data-reel]')) {
     let down = false, moved = false, startX = 0, startLeft = 0, lastX = 0, lastT = 0, vel = 0, raf = 0;
@@ -274,7 +256,7 @@
       if (!moved && Math.abs(dx) > 6) {
         moved = true;
         reel.classList.add('is-dragging');
-        /* Only once it is a drag: capturing earlier would swallow plain clicks. */
+        /* capture only once dragging, or plain clicks get swallowed */
         reel.setPointerCapture(ev.pointerId);
       }
       if (!moved) return;
@@ -295,7 +277,7 @@
         if (Math.abs(v) > 0.4) raf = requestAnimationFrame(fling);
       };
       if (!reduced.matches) raf = requestAnimationFrame(fling);
-      /* Let the click that ends this drag be swallowed before the flag clears. */
+      /* keep the flag until the click that ends the drag has fired */
       setTimeout(() => { moved = false; reel.classList.remove('is-dragging'); }, 0);
     };
     reel.addEventListener('pointerup', release);
@@ -305,7 +287,7 @@
     }, true);
   }
 
-  /* ── copy the Discord username ──────────────────────────────────────── */
+  /* copy button */
 
   for (const btn of $$('[data-copy]')) {
     const label = $('[data-copy-label]', btn);
@@ -331,9 +313,7 @@
     });
   }
 
-  /* ── the lightbox ────────────────────────────────────────────────────────
-     A screenshot grows out of its frame into the middle of the screen and
-     shrinks back into it on close. Arrows and swipes move within the reel. */
+  /* lightbox */
 
   const lb = $('[data-lightbox]');
   if (lb && typeof lb.showModal === 'function') {
@@ -357,7 +337,7 @@
       }
     };
 
-    /* From the thumbnail's box to where the big picture lands, in one move. */
+    /* FLIP from the thumbnail rect */
     const flip = (btn, reverse) => {
       const from = btn.getBoundingClientRect();
       pic.style.transition = 'none';

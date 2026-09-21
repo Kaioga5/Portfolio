@@ -1,16 +1,8 @@
-/**
- * Projects, newest first.
- *
- * `date` is the Marketplace release date (ISO) and is what the order is based
- * on; the build refuses to run if dated projects fall out of order. Projects
- * without a known release date carry `undated: true` and a comment explaining
- * where they sit and why. Nothing here is a guess: figures come from the
- * public Marketplace listings, and the Beyond Survival numbers come from the
- * 2.0.0 submission package itself.
- *
- * `roles` is what Kaiōga did on the project, shown as chips under the tagline.
- * `contribution` is an optional one-line note on top of that; while it still
- * reads exactly PLACEHOLDER_CONTRIBUTION it is not rendered.
+/*
+ * Projects, newest first. `date` (ISO) drives the order and the build checks it.
+ * Undated entries have a comment saying where they sit.
+ * `roles` renders as chips. `contribution` renders only if it differs from
+ * PLACEHOLDER_CONTRIBUTION.
  */
 
 export const FIGURES_AS_OF = 'August and September 2026';
@@ -20,8 +12,7 @@ export const PLACEHOLDER_CONTRIBUTION = 'Development work on the shipped add-on.
 const pdp = (id) => `https://www.minecraft.net/en-us/marketplace/pdp?id=${id}`;
 
 export const work = [
-  /* Release date from the Marketplace trackers (bedrockexplorer.com); the
-     listing itself shows no date. */
+  /* release date from bedrockexplorer.com; the listing shows none */
   {
     slug: 'festive-biomes',
     roles: ['Project Manager', 'Head Developer'],
@@ -204,8 +195,7 @@ export const work = [
     ],
   },
 
-  /* Release dates for these two come from the Marketplace trackers
-     (bedrockexplorer.com); the listings show none. */
+  /* release dates from bedrockexplorer.com; the listings show none */
   {
     slug: 'more-biomes',
     roles: ['Developer'],
@@ -312,9 +302,8 @@ export const work = [
     ],
   },
 
-  /* The listing shows no release date. It was already live when this portfolio
-     first went up (June 2024), so it sits after The Dawn Era, which came out
-     that July. Counts are taken from the 2.0.0 package, not the listing. */
+  /* no listed release date. Was live by June 2024, so it sits after The Dawn Era.
+     Counts come from the 2.0.0 package. */
   {
     slug: 'beyond-survival',
     roles: ['Project Manager', 'Head Developer'],
@@ -354,8 +343,7 @@ export const work = [
     ],
   },
 
-  /* A realm, not a Marketplace listing, so there is no release date to show.
-     It predates everything above. */
+  /* realm, no release date; predates everything above */
   {
     slug: 'mob-prison',
     roles: ['Project Manager', 'Head Developer'],
@@ -375,7 +363,7 @@ export const work = [
     shots: [{ src: '01', alt: 'A harbour town of stone and timber buildings around a turquoise canal.' }],
   },
 
-  /* Still being built, so it closes the list. */
+  /* in development */
   {
     slug: 'kaioga-project',
     roles: ['Project Manager', 'Head Developer'],
@@ -397,9 +385,8 @@ export const work = [
   },
 ];
 
-/* Not shown yet: the LycanForge update this describes has not been released.
-   Move it back into `work` (it goes after Cut the Rope) when it is. The
-   images stay in assets/img/work/lycan-forge. */
+/* not rendered: the LycanForge update is unreleased. Move it back into `work`
+   (after Cut the Rope) when it ships. Images are still in assets/img/work/lycan-forge. */
 export const shelved = [
   {
     slug: 'lycan-forge',

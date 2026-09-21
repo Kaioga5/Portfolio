@@ -23,10 +23,9 @@
 <link rel="apple-touch-icon" href="assets/img/mark-192.png">
 
 <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=18sd3ra">
+<link rel="stylesheet" href="assets/css/site.css?v=1hhrubn">
 <script>
-  /* Entrance states only apply once this bet is on the table; site.js confirms
-     it, and if the script never arrives the page uncovers itself. */
+  /* js-ready enables entrance states; dropped again if site.js never runs */
   var d = document.documentElement;
   d.classList.add('js-ready');
   setTimeout(function () { if (!d.classList.contains('js-live')) d.classList.remove('js-ready'); }, 2500);
@@ -957,6 +956,6 @@
   <button type="button" class="lightbox__nav lightbox__nav--next" data-lb-next aria-label="Next screenshot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
 </dialog>
 
-<script src="assets/js/site.js?v=2oc7j4" defer></script>
+<script src="assets/js/site.js?v=nt20nr" defer></script>
 </body>
 </html>

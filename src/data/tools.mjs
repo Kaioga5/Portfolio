@@ -1,9 +1,4 @@
-/**
- * Tools made for other creators.
- *
- * Everything here comes from the repositories themselves (READMEs, manifests,
- * source layout). If a claim is not in the repo, it does not belong here.
- */
+/* Tools. Claims come from the repos (README, manifests). */
 
 export const tools = [
   {
@@ -58,8 +53,7 @@ export const tools = [
   },
 ];
 
-/* Not shown yet: Model-to-Particle has not been released. Move it back into
-   `tools` (it goes first) when it is; its icon stays in assets/img/tools. */
+/* not rendered: unreleased. Move it back into `tools` (first) when it ships. */
 export const shelved = [
   {
     slug: 'model-to-particle',
@@ -68,7 +62,7 @@ export const shelved = [
     accent: '#6EE7FF',
     icon: 'model-to-particle.svg',
     iconAlt: 'A wireframe cube dissolving into a cluster of glowing square pixels.',
-    // No `repo` yet: the source is not public. Add one here when it is.
+    // no public repo yet
     status: 'Source not public yet',
     hook: 'Turn a Blockbench model into a particle effect.',
     text:
