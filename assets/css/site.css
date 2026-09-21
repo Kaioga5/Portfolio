@@ -257,7 +257,7 @@ button { font: inherit; color: inherit; }
 .hero__hi .nowrap { white-space: nowrap; }
 .wave {
   display: inline-block;
-  transform-origin: 72% 72%;
+  transform-origin: 78% 82%;   /* the wrist */
   font-size: 0.9em;
   margin-left: 0.05em;
 }
@@ -923,14 +923,19 @@ body.has-lightbox { overflow: hidden; }
 .js-ready .deck.is-in .deck__card { transition-delay: calc(var(--d) * 55ms), calc(var(--d) * 55ms); }
 .js-ready .deck.is-in.is-dealt .deck__card { transition-delay: 0s; }
 
-.js-ready .wave.is-in { animation: wave 1.7s 0.5s ease-in-out 1; }
+/* waves for about 1.4s, rests, waves again; hovering the greeting keeps it waving */
+.wave { animation: wave 4.2s 1s ease-in-out infinite; }
+.hero__hi:hover .wave { animation: wave 1.6s ease-in-out infinite; }
 @keyframes wave {
-  0%, 100% { transform: rotate(0); }
-  15% { transform: rotate(16deg); }
-  30% { transform: rotate(-8deg); }
-  45% { transform: rotate(14deg); }
-  60% { transform: rotate(-4deg); }
-  75% { transform: rotate(8deg); }
+  0% { transform: rotate(0); }
+  5% { transform: rotate(18deg); }
+  10% { transform: rotate(-10deg); }
+  15% { transform: rotate(18deg); }
+  20% { transform: rotate(-6deg); }
+  25% { transform: rotate(14deg); }
+  30% { transform: rotate(-4deg); }
+  35%, 100% { transform: rotate(0); }
+}
 }
 
 /* scene entrance */

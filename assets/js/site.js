@@ -146,8 +146,6 @@
   ready.then(() => {
     requestAnimationFrame(() => {
       $$('[data-reveal]').forEach((el) => el.classList.add('is-in'));
-      const wave = $('.wave');
-      if (wave) wave.classList.add('is-in');
       if (deck) {
         deck.classList.add('is-in');
         setTimeout(() => deck.classList.add('is-dealt'), reduced.matches ? 0 : 1300);
