@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Kaiōga">
+  <title>Kaiōga</title>
+  <rect width="64" height="64" rx="13" fill="#0d0f13"/>
+  <g>
+    <!-- top face: the lit one -->
+    <path d="M32 10 55 23.5 32 37 9 23.5Z" fill="#ff5a1f"/>
+    <!-- left face -->
+    <path d="M9 23.5 32 37v17L9 40.5Z" fill="#3b424e"/>
+    <!-- right face -->
+    <path d="M55 23.5 32 37v17l23-13.5Z" fill="#242932"/>
+    <!-- extraction notch: one voxel lifted out of the top -->
+    <path d="M32 4 42 9.8 32 15.7 22 9.8Z" fill="#ff8f4a"/>
+  </g>
+</svg>

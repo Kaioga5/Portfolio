@@ -1,95 +1,962 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" style="--biome:#F2A6C8">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kaiōga's professional portfolio - game developer, programmer, and creative technologist." />
-  <title>Kaiōga | Game Developer & Programmer</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaiōga — Minecraft Bedrock creator</title>
+<meta name="description" content="Kaiōga makes add-ons for the Minecraft Bedrock Marketplace and tools for other creators: converters, templates and the pipelines that take a model from Blockbench to a finished pack.">
+<meta name="author" content="Kaiōga">
+<meta name="theme-color" content="#f7f2e8">
+<link rel="canonical" href="https://kaioga5.github.io/Portfolio/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kaiōga">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Kaiōga — Minecraft Bedrock creator">
+<meta property="og:description" content="Kaiōga makes add-ons for the Minecraft Bedrock Marketplace and tools for other creators: converters, templates and the pipelines that take a model from Blockbench to a finished pack.">
+<meta property="og:url" content="https://kaioga5.github.io/Portfolio/">
+<meta property="og:image" content="https://kaioga5.github.io/Portfolio/assets/img/og.png">
+<meta property="og:image:alt" content="Kaiōga — Minecraft Bedrock creator">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/mark-192.png">
+
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css?v=18sd3ra">
+<script>
+  /* Entrance states only apply once this bet is on the table; site.js confirms
+     it, and if the script never arrives the page uncovers itself. */
+  var d = document.documentElement;
+  d.classList.add('js-ready');
+  setTimeout(function () { if (!d.classList.contains('js-live')) d.classList.remove('js-ready'); }, 2500);
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Kaiōga",
+ "alternateName": "Kaioga5",
+ "url": "https://kaioga5.github.io/Portfolio/",
+ "email": "mailto:landomgonzalezbff@gmail.com",
+ "jobTitle": "Minecraft Bedrock creator",
+ "description": "Kaiōga makes add-ons for the Minecraft Bedrock Marketplace and tools for other creators: converters, templates and the pipelines that take a model from Blockbench to a finished pack.",
+ "knowsLanguage": [
+  "en",
+  "es"
+ ],
+ "knowsAbout": [
+  "Minecraft Bedrock Edition",
+  "Add-on development",
+  "Blockbench",
+  "Bedrock geometry and particles",
+  "Molang",
+  "TypeScript"
+ ],
+ "sameAs": [
+  "https://github.com/Kaioga5",
+  "https://x.com/Kaioga55",
+  "https://www.youtube.com/@Kaioga5",
+  "https://marketplace.visualstudio.com/items?itemName=Kaioga.bbmodel-unpack"
+ ]
+}
+</script>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">Kaiōga</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
 
-  <section class="hero">
-    <div class="container">
-      <h2>Hi, I'm Kaiōga</h2>
-      <p>A Minecraft developer and creative programmer building unique digital experiences.</p>
-      <a href="#projects" class="button">View My Work</a>
-    </div>
-  </section>
+<header class="top" data-top>
+  <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+  <path d="M16 3 29 10.5 16 18 3 10.5Z" fill="var(--brand)"/>
+  <path d="M3 10.5 16 18v11L3 21.5Z" fill="currentColor" opacity=".55"/>
+  <path d="M29 10.5 16 18v11l13-7.5Z" fill="currentColor" opacity=".3"/>
+</svg><span>Kaiōga</span></a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#work" data-navlink>Work</a><a href="#tools" data-navlink>Tools</a><a href="#about" data-navlink>About</a><a href="#contact" data-navlink>Say hi</a>
+  </nav>
+</header>
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I'm a passionate Minecraft and app developer who loves turning ideas into interactive worlds. With a strong focus on Minecraft add-ons, web development, and creative scripting, I aim to blend fun, functionality, and polish into everything I build.</p>
+<main id="main">
+  <section class="hero" id="top" data-section="hero">
+    <div class="hero__text">
+      <h1 class="hero__hi" data-reveal><span>Hi! I’m <span class="nowrap">Kaioga <span class="wave" aria-hidden="true">👋</span></span></span></h1>
+      <p class="hero__lead" data-reveal><span>I make add-ons for the Minecraft Bedrock Marketplace, and tools that help other creators along the way: converters, templates, and the pipelines that take a model from Blockbench to a finished pack.</span></p>
+      <a class="hero__cue" href="#work" data-reveal><span>Have a look around<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></span></a>
     </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="images/beyond_survival.png" alt="Beyond Survival" />
-          <h3>Beyond Survival</h3>
-          <p>An immersive survival experience built with custom mobs, AI, and complex mechanics for Minecraft Bedrock.</p>
-        </div>
-        <div class="card">
-          <img src="images/block_templates.png" alt="Block Templates" />
-          <h3>Blockistry</h3>
-          <p>A Minecraft block generator app using JavaScript and JSON templates to automate content creation.</p>
-        </div>
-        <div class="card">
-          <img src="images/mob_prison.jpg" alt="Mob Prison" />
-          <h3>Mob Prison</h3>
-          <p>A Minecraft realm with over 500 users and various gameplay, such prisons, plots, and dungeons.</p>
-        </div>
-        <div class="card">
-          <img src="images/kaioga_project.png" alt="Kaioga's Project" />
-          <h3>Mob Prison</h3>
-          <p>An upcoming story-rich MMORPG within Minecraft.</p>
+    
+    <div class="deck" data-deck>
+      <ul class="deck__cards">
+        
+        <li class="deck__card" style="--accent:#F2A6C8" data-card data-target="#work-festive-biomes" data-title="Festive Biomes" data-sub="Piki Studios">
+          <button type="button" class="deck__face" aria-label="Festive Biomes: go to project">
+            <img src="assets/img/work/festive-biomes/cover.webp"
+     srcset="assets/img/work/festive-biomes/cover-400.webp 400w, assets/img/work/festive-biomes/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#3FC4A8" data-card data-target="#work-village-defense" data-title="Village Defense" data-sub="Piki Studios">
+          <button type="button" class="deck__face" aria-label="Village Defense: go to project">
+            <img src="assets/img/work/village-defense/cover.webp"
+     srcset="assets/img/work/village-defense/cover-400.webp 400w, assets/img/work/village-defense/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#FF7FB8" data-card data-target="#work-tiny-takeover" data-title="Tiny Takeover: Mini Mania" data-sub="JWolf Creations">
+          <button type="button" class="deck__face" aria-label="Tiny Takeover: Mini Mania: go to project">
+            <img src="assets/img/work/tiny-takeover/cover.webp"
+     srcset="assets/img/work/tiny-takeover/cover-400.webp 400w, assets/img/work/tiny-takeover/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#E4324F" data-card data-target="#work-vampire-biomes" data-title="Vampire Biomes" data-sub="Waypoint Studios">
+          <button type="button" class="deck__face" aria-label="Vampire Biomes: go to project">
+            <img src="assets/img/work/vampire-biomes/cover.webp"
+     srcset="assets/img/work/vampire-biomes/cover-400.webp 400w, assets/img/work/vampire-biomes/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#8FD14F" data-card data-target="#work-cut-the-rope" data-title="Cut the Rope" data-sub="Mush Co">
+          <button type="button" class="deck__face" aria-label="Cut the Rope: go to project">
+            <img src="assets/img/work/cut-the-rope/cover.webp"
+     srcset="assets/img/work/cut-the-rope/cover-400.webp 400w, assets/img/work/cut-the-rope/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#E8C23A" data-card data-target="#work-more-biomes" data-title="More Biomes" data-sub="Pixelusion">
+          <button type="button" class="deck__face" aria-label="More Biomes: go to project">
+            <img src="assets/img/work/more-biomes/cover.webp"
+     srcset="assets/img/work/more-biomes/cover-400.webp 400w, assets/img/work/more-biomes/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#9EDCEB" data-card data-target="#work-ghosts" data-title="Ghosts" data-sub="Piki Studios">
+          <button type="button" class="deck__face" aria-label="Ghosts: go to project">
+            <img src="assets/img/work/ghosts/cover.webp"
+     srcset="assets/img/work/ghosts/cover-400.webp 400w, assets/img/work/ghosts/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#F0A32B" data-card data-target="#work-the-dawn-era" data-title="The Dawn Era" data-sub="Mush Co">
+          <button type="button" class="deck__face" aria-label="The Dawn Era: go to project">
+            <img src="assets/img/work/the-dawn-era/cover.webp"
+     srcset="assets/img/work/the-dawn-era/cover-400.webp 400w, assets/img/work/the-dawn-era/cover.webp 800w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="800" height="343" alt="" decoding="sync">
+          </button>
+        </li>
+        <li class="deck__card" style="--accent:#2EC4E8" data-card data-target="#work-beyond-survival" data-title="Beyond Survival" data-sub="Piki Studios">
+          <button type="button" class="deck__face" aria-label="Beyond Survival: go to project">
+            <img src="assets/img/work/beyond-survival/cover.webp"
+     srcset="assets/img/work/beyond-survival/cover-400.webp 400w, assets/img/work/beyond-survival/cover.webp 1600w" sizes="(max-width: 64rem) 92vw, 44vw"
+     width="1600" height="686" alt="" decoding="sync">
+          </button>
+        </li>
+      </ul>
+      <div class="deck__foot">
+        <p class="deck__caption" data-deck-caption aria-live="polite"><b>Festive Biomes</b><span>Piki Studios</span></p>
+        <div class="deck__ctl">
+          <button type="button" class="deck__btn" data-deck-prev aria-label="Previous project"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+          <button type="button" class="deck__btn" data-deck-next aria-label="Next project"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="section">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>Game Scripting (Minecraft Bedrock, JS API)</li>
-        <li>Web Development (FastAPI, Three.js, HTML/CSS/JS)</li>
-        <li>Project Leadership & Marketplace Publishing</li>
-        <li>Animation Controllers & Entity Development</li>
-      </ul>
+  <section class="sec" id="work" data-section="work">
+    <header class="sec__head">
+      <h2>Work</h2>
+      <p>Add-ons I’ve worked on, newest first. Most of them were made with partner studios.</p>
+    </header>
+    <div class="scenes">
+      
+    <article class="scene" id="work-festive-biomes" style="--accent:#F2A6C8" data-scene data-accent="#F2A6C8">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">01</span><span>Piki Studios</span><span>2026</span></p>
+        <h3 class="scene__title">Festive Biomes</h3>
+        <p class="scene__line">Christmas all year, in four new biomes.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Project Manager</span><span class="chip">Head Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">Piki Studios’ holiday add-on. It adds four new biomes, from icy wonderlands to candy-covered plains, each with its own underground, and it’s built to still feel like vanilla. Over 200 new blocks and more than 30 mobs come with it.</p>
+        
+        <ul class="points"><li>4 new biomes, each with its own underground</li><li>200+ blocks and 30+ mobs</li><li>Keeps the vanilla feel</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:92%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.6</b><small>51 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>990</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>12 May 2026</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=740e3cbe-0db0-4515-8a03-8238767c3672" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/festive-biomes/cover.webp"
+     srcset="assets/img/work/festive-biomes/cover-400.webp 400w, assets/img/work/festive-biomes/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="Festive Biomes key art" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Festive Biomes screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/festive-biomes/01.webp" data-caption="A gingerbread village on white snow, with candy canes and a gingerbread mob." aria-label="Open screenshot 1 of 4">
+              <img src="assets/img/work/festive-biomes/01.webp"
+     srcset="assets/img/work/festive-biomes/01-480.webp 480w, assets/img/work/festive-biomes/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A gingerbread village on white snow, with candy canes and a gingerbread mob." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/festive-biomes/02.webp" data-caption="A dark cave lined with gingerbread blocks and glowing lanterns." aria-label="Open screenshot 2 of 4">
+              <img src="assets/img/work/festive-biomes/02.webp"
+     srcset="assets/img/work/festive-biomes/02-480.webp 480w, assets/img/work/festive-biomes/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A dark cave lined with gingerbread blocks and glowing lanterns." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/festive-biomes/03.webp" data-caption="A pink candy cave with cotton-candy trees and sweets on the ground." aria-label="Open screenshot 3 of 4">
+              <img src="assets/img/work/festive-biomes/03.webp"
+     srcset="assets/img/work/festive-biomes/03-480.webp 480w, assets/img/work/festive-biomes/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A pink candy cave with cotton-candy trees and sweets on the ground." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/festive-biomes/04.webp" data-caption="A snowy plain with candy mobs and pink trees on the horizon." aria-label="Open screenshot 4 of 4">
+              <img src="assets/img/work/festive-biomes/04.webp"
+     srcset="assets/img/work/festive-biomes/04-480.webp 480w, assets/img/work/festive-biomes/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A snowy plain with candy mobs and pink trees on the horizon." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-village-defense" style="--accent:#3FC4A8" data-scene data-accent="#3FC4A8">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">02</span><span>Piki Studios</span><span>2026</span></p>
+        <h3 class="scene__title">Village Defense</h3>
+        <p class="scene__line">Build a village, then keep it alive.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Project Manager</span><span class="chip">Head Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">Village building crossed with wave defence. Your villagers are the thing worth protecting: their homes and workshops level up through a coin economy with its own bank, you place and upgrade defences, and a builder mode handles where everything goes. Ten enemy types and three bosses come knocking, and all of it holds up in multiplayer.</p>
+        
+        <ul class="points"><li>10 enemies and 3 bosses across escalating waves</li><li>20+ upgradable buildings, 5 defences, 10+ weapons</li><li>A bank, a coin economy and a builder mode</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:70%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>3.5</b></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>990</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>28 Apr 2026</b></dd></div><div class="fact"><dt>Needs</dt><dd><b>Bedrock 1.21.120+</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=c8d934dc-a5bb-414d-b8d5-e5cd8fa6b74c" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/village-defense/cover.webp"
+     srcset="assets/img/work/village-defense/cover-400.webp 400w, assets/img/work/village-defense/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="Village Defense key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Village Defense screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/01.webp" data-caption="A defended village under attack, a mounted defence firing at approaching mobs." aria-label="Open screenshot 1 of 7">
+              <img src="assets/img/work/village-defense/01.webp"
+     srcset="assets/img/work/village-defense/01-480.webp 480w, assets/img/work/village-defense/01.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="A defended village under attack, a mounted defence firing at approaching mobs." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/02.webp" data-caption="A watchtower and armed villagers holding a line at the village edge." aria-label="Open screenshot 2 of 7">
+              <img src="assets/img/work/village-defense/02.webp"
+     srcset="assets/img/work/village-defense/02-480.webp 480w, assets/img/work/village-defense/02.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="A watchtower and armed villagers holding a line at the village edge." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/03.webp" data-caption="An aerial view of the whole village with its walls and outbuildings." aria-label="Open screenshot 3 of 7">
+              <img src="assets/img/work/village-defense/03.webp"
+     srcset="assets/img/work/village-defense/03-480.webp 480w, assets/img/work/village-defense/03.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="An aerial view of the whole village with its walls and outbuildings." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/04.webp" data-caption="A structure being placed in builder mode with on-screen placement hints." aria-label="Open screenshot 4 of 7">
+              <img src="assets/img/work/village-defense/04.webp"
+     srcset="assets/img/work/village-defense/04-480.webp 480w, assets/img/work/village-defense/04.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="A structure being placed in builder mode with on-screen placement hints." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/05.webp" data-caption="On-screen coin transfer notifications during a defence round." aria-label="Open screenshot 5 of 7">
+              <img src="assets/img/work/village-defense/05.webp"
+     srcset="assets/img/work/village-defense/05-480.webp 480w, assets/img/work/village-defense/05.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="On-screen coin transfer notifications during a defence round." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/06.webp" data-caption="The village hall dialog offering buy, upgrade and repair options." aria-label="Open screenshot 6 of 7">
+              <img src="assets/img/work/village-defense/06.webp"
+     srcset="assets/img/work/village-defense/06-480.webp 480w, assets/img/work/village-defense/06.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="The village hall dialog offering buy, upgrade and repair options." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/village-defense/07.webp" data-caption="The bank villager interface showing copper, silver and gold balances." aria-label="Open screenshot 7 of 7">
+              <img src="assets/img/work/village-defense/07.webp"
+     srcset="assets/img/work/village-defense/07-480.webp 480w, assets/img/work/village-defense/07.webp 640w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="640" height="360" alt="The bank villager interface showing copper, silver and gold balances." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-tiny-takeover" style="--accent:#FF7FB8" data-scene data-accent="#FF7FB8">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">03</span><span>JWolf Creations</span><span>2026</span></p>
+        <h3 class="scene__title">Tiny Takeover: Mini Mania</h3>
+        <p class="scene__line">Baby mobs, big chaos.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">A free add-on made for Minecraft’s Tiny Takeover event. It’s a set of short co-op minigames: round up baby farm animals, hold off waves of baby zombies, catch bees that scatter everywhere. Points go toward a collection of over 130 plushies, tracked in a Discovery Journal. It drops into any world, so there’s no new map to load.</p>
+        
+        <ul class="points"><li>Co-op minigames with a shared score</li><li>130+ collectible plushies and a Discovery Journal</li><li>Works in the world you already have</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:96%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.8</b><small>38,020 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><b>Free</b></dd></div><div class="fact"><dt>Released</dt><dd><b>21 Apr 2026</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=cdf6c886-a6c6-4167-9d35-2c26c8840d92" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/tiny-takeover/cover.webp"
+     srcset="assets/img/work/tiny-takeover/cover-400.webp 400w, assets/img/work/tiny-takeover/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="Tiny Takeover: Mini Mania key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Tiny Takeover: Mini Mania screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/tiny-takeover/01.webp" data-caption="A shop interior with shelves of collectible plushies and players browsing." aria-label="Open screenshot 1 of 5">
+              <img src="assets/img/work/tiny-takeover/01.webp"
+     srcset="assets/img/work/tiny-takeover/01-480.webp 480w, assets/img/work/tiny-takeover/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A shop interior with shelves of collectible plushies and players browsing." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/tiny-takeover/02.webp" data-caption="Players herding baby bees and farm animals across a sunny village field." aria-label="Open screenshot 2 of 5">
+              <img src="assets/img/work/tiny-takeover/02.webp"
+     srcset="assets/img/work/tiny-takeover/02-480.webp 480w, assets/img/work/tiny-takeover/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Players herding baby bees and farm animals across a sunny village field." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/tiny-takeover/03.webp" data-caption="Baby mobs gathered on a desert ridge at dusk." aria-label="Open screenshot 3 of 5">
+              <img src="assets/img/work/tiny-takeover/03.webp"
+     srcset="assets/img/work/tiny-takeover/03-480.webp 480w, assets/img/work/tiny-takeover/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Baby mobs gathered on a desert ridge at dusk." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/tiny-takeover/04.webp" data-caption="A Nether portal scene with baby piglins and a player in bright armour." aria-label="Open screenshot 4 of 5">
+              <img src="assets/img/work/tiny-takeover/04.webp"
+     srcset="assets/img/work/tiny-takeover/04-480.webp 480w, assets/img/work/tiny-takeover/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A Nether portal scene with baby piglins and a player in bright armour." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/tiny-takeover/05.webp" data-caption="A dark cave lit by lanterns with baby skeletons and zombies closing in." aria-label="Open screenshot 5 of 5">
+              <img src="assets/img/work/tiny-takeover/05.webp"
+     srcset="assets/img/work/tiny-takeover/05-480.webp 480w, assets/img/work/tiny-takeover/05.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A dark cave lit by lanterns with baby skeletons and zombies closing in." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-vampire-biomes" style="--accent:#E4324F" data-scene data-accent="#E4324F">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">04</span><span>Waypoint Studios</span><span>2026</span></p>
+        <h3 class="scene__title">Vampire Biomes</h3>
+        <p class="scene__line">Pick a side: hunter or vampire.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Head Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">A vampire overhaul for any world. You choose hunter or vampire and unlock abilities through rituals instead of a menu. Vampires command bat swarms and can turn into a bat; hunters get weapons of their own. Both sides work toward boss fights, Dracula included, across new blood-touched biomes.</p>
+        
+        <ul class="points"><li>Two progression paths, unlocked through rituals</li><li>Named bosses with their own health and phase UI</li><li>New biomes, exclusive weapons and bat-form flight</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:82%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.1</b><small>175+ ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>990</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>21 Apr 2026</b></dd></div><div class="fact"><dt>Made by</dt><dd><b>Butterfly Games</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=473238dd-1d80-4871-b071-2152683cc347" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/vampire-biomes/cover.webp"
+     srcset="assets/img/work/vampire-biomes/cover-400.webp 400w, assets/img/work/vampire-biomes/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="Vampire Biomes key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Vampire Biomes screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/vampire-biomes/01.webp" data-caption="A gothic castle silhouetted under a full moon, two players watching from the grass." aria-label="Open screenshot 1 of 6">
+              <img src="assets/img/work/vampire-biomes/01.webp"
+     srcset="assets/img/work/vampire-biomes/01-480.webp 480w, assets/img/work/vampire-biomes/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A gothic castle silhouetted under a full moon, two players watching from the grass." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/vampire-biomes/02.webp" data-caption="Three vampire characters in ornate armour standing in a candlelit hall." aria-label="Open screenshot 2 of 6">
+              <img src="assets/img/work/vampire-biomes/02.webp"
+     srcset="assets/img/work/vampire-biomes/02-480.webp 480w, assets/img/work/vampire-biomes/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Three vampire characters in ornate armour standing in a candlelit hall." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/vampire-biomes/03.webp" data-caption="The Dracula boss fight with a named health bar and vampire stats HUD." aria-label="Open screenshot 3 of 6">
+              <img src="assets/img/work/vampire-biomes/03.webp"
+     srcset="assets/img/work/vampire-biomes/03-480.webp 480w, assets/img/work/vampire-biomes/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="The Dracula boss fight with a named health bar and vampire stats HUD." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/vampire-biomes/04.webp" data-caption="Hunters in mixed armour advancing through a crimson biome." aria-label="Open screenshot 4 of 6">
+              <img src="assets/img/work/vampire-biomes/04.webp"
+     srcset="assets/img/work/vampire-biomes/04-480.webp 480w, assets/img/work/vampire-biomes/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Hunters in mixed armour advancing through a crimson biome." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/vampire-biomes/05.webp" data-caption="A player and a pale mount inside a cavern of dark red growth." aria-label="Open screenshot 5 of 6">
+              <img src="assets/img/work/vampire-biomes/05.webp"
+     srcset="assets/img/work/vampire-biomes/05-480.webp 480w, assets/img/work/vampire-biomes/05.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A player and a pale mount inside a cavern of dark red growth." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/vampire-biomes/06.webp" data-caption="Players around a campfire surrounded by candles and hanging bats." aria-label="Open screenshot 6 of 6">
+              <img src="assets/img/work/vampire-biomes/06.webp"
+     srcset="assets/img/work/vampire-biomes/06-480.webp 480w, assets/img/work/vampire-biomes/06.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Players around a campfire surrounded by candles and hanging bats." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-cut-the-rope" style="--accent:#8FD14F" data-scene data-accent="#8FD14F">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">05</span><span>Mush Co</span><span>2025</span></p>
+        <h3 class="scene__title">Cut the Rope</h3>
+        <p class="scene__line">Om Nom, in blocks.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">An official Cut the Rope crossover. Om Nom joins you as a companion, there are candy-powered puzzle minigames, and a wardrobe of costumes and accessories that combine into hundreds of looks. It also adds physics blocks, like magnets, fans and jumbo fireworks, so you can build puzzles of your own.</p>
+        
+        <ul class="points"><li>50+ costumes and accessories, 400+ combinations</li><li>Candy tools, bubbles and puzzle blocks</li><li>Included with Marketplace Pass</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:94%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.7</b><small>1,167 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>990</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>2 Dec 2025</b></dd></div><div class="fact"><dt>Needs</dt><dd><b>Bedrock 1.21.120+</b></dd></div><div class="fact"><dt>Licence</dt><dd><b>ZeptoLab</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=b5c52ceb-8b81-4f97-9aae-f5fa668c0278" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/cut-the-rope/cover.webp"
+     srcset="assets/img/work/cut-the-rope/cover-400.webp 400w, assets/img/work/cut-the-rope/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="Cut the Rope key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Cut the Rope screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/cut-the-rope/01.webp" data-caption="Om Nom beside a wooden puzzle rig of ropes and candy in a Minecraft world." aria-label="Open screenshot 1 of 5">
+              <img src="assets/img/work/cut-the-rope/01.webp"
+     srcset="assets/img/work/cut-the-rope/01-480.webp 480w, assets/img/work/cut-the-rope/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Om Nom beside a wooden puzzle rig of ropes and candy in a Minecraft world." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/cut-the-rope/02.webp" data-caption="Fireworks and floating candy rings above a group of costumed Om Nom characters." aria-label="Open screenshot 2 of 5">
+              <img src="assets/img/work/cut-the-rope/02.webp"
+     srcset="assets/img/work/cut-the-rope/02-480.webp 480w, assets/img/work/cut-the-rope/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Fireworks and floating candy rings above a group of costumed Om Nom characters." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/cut-the-rope/03.webp" data-caption="A wooden interior lined with shelves of Om Nom plushies and costume variants." aria-label="Open screenshot 3 of 5">
+              <img src="assets/img/work/cut-the-rope/03.webp"
+     srcset="assets/img/work/cut-the-rope/03-480.webp 480w, assets/img/work/cut-the-rope/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A wooden interior lined with shelves of Om Nom plushies and costume variants." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/cut-the-rope/04.webp" data-caption="A night village lit by lanterns with Om Nom characters gathered around a cauldron." aria-label="Open screenshot 4 of 5">
+              <img src="assets/img/work/cut-the-rope/04.webp"
+     srcset="assets/img/work/cut-the-rope/04-480.webp 480w, assets/img/work/cut-the-rope/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A night village lit by lanterns with Om Nom characters gathered around a cauldron." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/cut-the-rope/05.webp" data-caption="A framed puzzle painting on a dark stone wall with characters watching." aria-label="Open screenshot 5 of 5">
+              <img src="assets/img/work/cut-the-rope/05.webp"
+     srcset="assets/img/work/cut-the-rope/05-480.webp 480w, assets/img/work/cut-the-rope/05.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A framed puzzle painting on a dark stone wall with characters watching." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-more-biomes" style="--accent:#E8C23A" data-scene data-accent="#E8C23A">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">06</span><span>Pixelusion</span><span>2025</span></p>
+        <h3 class="scene__title">More Biomes</h3>
+        <p class="scene__line">Fourteen new biomes, above ground and below.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">Pixelusion’s biome expansion: fourteen new biomes across forests, caves, the End and the sky, each with its own trees, wood sets, foliage, mobs and structures.</p>
+        
+        <ul class="points"><li>14 biomes: forest, cave, End and sky</li><li>New trees, wood sets and foliage</li><li>Mobs, structures, items and blocks to match</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:84%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.2</b><small>1,106 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>990</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>9 Sep 2025</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=90bfd8db-9ff1-4f56-a4ea-d0ea868832f5" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/more-biomes/cover.webp"
+     srcset="assets/img/work/more-biomes/cover-400.webp 400w, assets/img/work/more-biomes/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="More Biomes key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="More Biomes screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/01.webp" data-caption="Tall pink crystal trees under a purple sky." aria-label="Open screenshot 1 of 7">
+              <img src="assets/img/work/more-biomes/01.webp"
+     srcset="assets/img/work/more-biomes/01-480.webp 480w, assets/img/work/more-biomes/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Tall pink crystal trees under a purple sky." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/02.webp" data-caption="A misty enchanted forest with pale spirit mobs and glowing motes." aria-label="Open screenshot 2 of 7">
+              <img src="assets/img/work/more-biomes/02.webp"
+     srcset="assets/img/work/more-biomes/02-480.webp 480w, assets/img/work/more-biomes/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A misty enchanted forest with pale spirit mobs and glowing motes." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/03.webp" data-caption="A pink forest with white-trunked trees and a horned deer mob." aria-label="Open screenshot 3 of 7">
+              <img src="assets/img/work/more-biomes/03.webp"
+     srcset="assets/img/work/more-biomes/03-480.webp 480w, assets/img/work/more-biomes/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A pink forest with white-trunked trees and a horned deer mob." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/04.webp" data-caption="Giant blue and red mushrooms with a small mushroom creature." aria-label="Open screenshot 4 of 7">
+              <img src="assets/img/work/more-biomes/04.webp"
+     srcset="assets/img/work/more-biomes/04-480.webp 480w, assets/img/work/more-biomes/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Giant blue and red mushrooms with a small mushroom creature." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/05.webp" data-caption="An autumn forest with orange leaves, a stone shrine and a pale beast." aria-label="Open screenshot 5 of 7">
+              <img src="assets/img/work/more-biomes/05.webp"
+     srcset="assets/img/work/more-biomes/05-480.webp 480w, assets/img/work/more-biomes/05.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="An autumn forest with orange leaves, a stone shrine and a pale beast." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/06.webp" data-caption="A sleeping bear in a redwood forest." aria-label="Open screenshot 6 of 7">
+              <img src="assets/img/work/more-biomes/06.webp"
+     srcset="assets/img/work/more-biomes/06-480.webp 480w, assets/img/work/more-biomes/06.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A sleeping bear in a redwood forest." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/more-biomes/07.webp" data-caption="A floating sky island with a winged creature above it." aria-label="Open screenshot 7 of 7">
+              <img src="assets/img/work/more-biomes/07.webp"
+     srcset="assets/img/work/more-biomes/07-480.webp 480w, assets/img/work/more-biomes/07.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A floating sky island with a winged creature above it." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-ghosts" style="--accent:#9EDCEB" data-scene data-accent="#9EDCEB">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">07</span><span>Piki Studios</span><span>2025</span></p>
+        <h3 class="scene__title">Ghosts</h3>
+        <p class="scene__line">Every mob has a ghost now.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">A Piki Studios add-on where every creature gets a ghost version, over seventy of them. You can’t touch them, but you can defend yourself: there are ectoplasm and silver items and blocks to craft, and silver ruins to find in the world. Better with friends.</p>
+        
+        <ul class="points"><li>70+ ghost versions of mobs</li><li>Ectoplasm and silver items and blocks</li><li>Silver ruins out in the world</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:92%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.6</b><small>20 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>660</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>5 Aug 2025</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=054ac515-f2c5-4365-a5ed-b7065040b6b3" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/ghosts/cover.webp"
+     srcset="assets/img/work/ghosts/cover-400.webp 400w, assets/img/work/ghosts/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="Ghosts key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Ghosts screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/ghosts/01.webp" data-caption="Ghost mobs drifting over a dark forest at night." aria-label="Open screenshot 1 of 4">
+              <img src="assets/img/work/ghosts/01.webp"
+     srcset="assets/img/work/ghosts/01-480.webp 480w, assets/img/work/ghosts/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Ghost mobs drifting over a dark forest at night." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/ghosts/02.webp" data-caption="A village at night with ghost animals crossing the fields." aria-label="Open screenshot 2 of 4">
+              <img src="assets/img/work/ghosts/02.webp"
+     srcset="assets/img/work/ghosts/02-480.webp 480w, assets/img/work/ghosts/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A village at night with ghost animals crossing the fields." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/ghosts/03.webp" data-caption="A room built from silver blocks, seen from inside." aria-label="Open screenshot 3 of 4">
+              <img src="assets/img/work/ghosts/03.webp"
+     srcset="assets/img/work/ghosts/03-480.webp 480w, assets/img/work/ghosts/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A room built from silver blocks, seen from inside." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/ghosts/04.webp" data-caption="A cave full of ghost mobs above lava." aria-label="Open screenshot 4 of 4">
+              <img src="assets/img/work/ghosts/04.webp"
+     srcset="assets/img/work/ghosts/04-480.webp 480w, assets/img/work/ghosts/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A cave full of ghost mobs above lava." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-the-dawn-era" style="--accent:#F0A32B" data-scene data-accent="#F0A32B">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">08</span><span>Mush Co</span><span>2024</span></p>
+        <h3 class="scene__title">The Dawn Era</h3>
+        <p class="scene__line">Eleven dinosaurs, and a world that carries on without you.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">A survival dinosaur add-on: eleven species to find, tame, breed and ride, an aquatic tier headed by Dunkleosteus, craftable gear, and predator and prey behaviour that keeps running whether or not you’re watching. It first shipped in 2024 and is still getting updates.</p>
+        
+        <ul class="points"><li>11 species to discover, tame and raise</li><li>An ecosystem, not just spawn tables</li><li>Craftable gear and per-creature behaviour settings</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:92%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>4.6</b><small>7,314 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>490</b><small>Minecoins</small></dd></div><div class="fact"><dt>Released</dt><dd><b>30 Jul 2024</b></dd></div><div class="fact"><dt>Updated</dt><dd><b>May 2026</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=1bca9a28-7cda-4feb-a4db-30a03ae771f9" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/the-dawn-era/cover.webp"
+     srcset="assets/img/work/the-dawn-era/cover-400.webp 400w, assets/img/work/the-dawn-era/cover.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="343" alt="The Dawn Era key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="The Dawn Era screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/the-dawn-era/01.webp" data-caption="A dense jungle clearing with dinosaurs moving between the trees." aria-label="Open screenshot 1 of 6">
+              <img src="assets/img/work/the-dawn-era/01.webp"
+     srcset="assets/img/work/the-dawn-era/01-480.webp 480w, assets/img/work/the-dawn-era/01.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A dense jungle clearing with dinosaurs moving between the trees." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/the-dawn-era/02.webp" data-caption="A large theropod facing a chicken across a grass field, for scale." aria-label="Open screenshot 2 of 6">
+              <img src="assets/img/work/the-dawn-era/02.webp"
+     srcset="assets/img/work/the-dawn-era/02-480.webp 480w, assets/img/work/the-dawn-era/02.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A large theropod facing a chicken across a grass field, for scale." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/the-dawn-era/03.webp" data-caption="Sunset over a shoreline with dinosaurs silhouetted against the sky." aria-label="Open screenshot 3 of 6">
+              <img src="assets/img/work/the-dawn-era/03.webp"
+     srcset="assets/img/work/the-dawn-era/03-480.webp 480w, assets/img/work/the-dawn-era/03.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Sunset over a shoreline with dinosaurs silhouetted against the sky." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/the-dawn-era/04.webp" data-caption="A Dunkleosteus swimming past the player underwater with a health bar shown." aria-label="Open screenshot 4 of 6">
+              <img src="assets/img/work/the-dawn-era/04.webp"
+     srcset="assets/img/work/the-dawn-era/04-480.webp 480w, assets/img/work/the-dawn-era/04.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A Dunkleosteus swimming past the player underwater with a health bar shown." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/the-dawn-era/05.webp" data-caption="A river valley with a long-necked dinosaur crossing the shallows." aria-label="Open screenshot 5 of 6">
+              <img src="assets/img/work/the-dawn-era/05.webp"
+     srcset="assets/img/work/the-dawn-era/05-480.webp 480w, assets/img/work/the-dawn-era/05.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="A river valley with a long-necked dinosaur crossing the shallows." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/the-dawn-era/06.webp" data-caption="Kelp beds and swimming reptiles seen from below the surface." aria-label="Open screenshot 6 of 6">
+              <img src="assets/img/work/the-dawn-era/06.webp"
+     srcset="assets/img/work/the-dawn-era/06-480.webp 480w, assets/img/work/the-dawn-era/06.webp 800w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="800" height="450" alt="Kelp beds and swimming reptiles seen from below the surface." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-beyond-survival" style="--accent:#2EC4E8" data-scene data-accent="#2EC4E8">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">09</span><span>Piki Studios</span><span>Marketplace add-on</span></p>
+        <h3 class="scene__title">Beyond Survival</h3>
+        <p class="scene__line">Survival, with a lot more in it.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Project Manager</span><span class="chip">Head Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">Piki Studios’ survival expansion: new mobs with their own abilities, new ores and gear, and a big pile of building blocks. The 2.0 update grows it a lot. It adds eighteen custom biomes, over a hundred structures across the Overworld and the End, around sixty new mobs plus a set of mob statues, and more than five hundred new blocks and items each.</p>
+        
+        <ul class="points"><li>18 custom biomes and 100+ structures in 2.0</li><li>New mobs, ores, tools and armour sets</li><li>500+ blocks: bricks, pillars, painted wood, doors, traps and more</li></ul>
+        <div class="facts"><dl class="facts__row"><div class="fact fact--rating"><dt>Rating</dt><dd><span class="stars" style="--score:76%"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg><span class="stars__fill"><svg viewBox="0 0 100 20" aria-hidden="true" focusable="false"><path transform="translate(0 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(20 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(40 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(60 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/><path transform="translate(80 0)" d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 14.9l-5.3 2.8 1.1-5.9L1.5 7.7l5.9-.8z"/></svg></span></span><b>3.8</b><small>705 ratings</small></dd></div><div class="fact"><dt>Price</dt><dd><svg class="coin" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7"/><path d="M5.2 11V5.4L8 8.2l2.8-2.8V11"/></svg><b>830</b><small>Minecoins</small></dd></div><div class="fact"><dt>Version</dt><dd><b>1.1 live, 2.0 in the works</b></dd></div></dl></div>
+        <a class="cta" href="https://www.minecraft.net/en-us/marketplace/pdp?id=18639b36-e09f-41d6-8ecd-011a988a04c2" target="_blank" rel="noopener"><span>See it on the Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/beyond-survival/cover.webp"
+     srcset="assets/img/work/beyond-survival/cover-400.webp 400w, assets/img/work/beyond-survival/cover.webp 1600w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="1600" height="686" alt="Beyond Survival key art" loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+      <div class="reel" data-reel aria-label="Beyond Survival screenshots">
+        <ul class="reel__track">
+          
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/01.webp" data-caption="An End forest of pale trees and glowing pink flowers, with winged mobs overhead." aria-label="Open screenshot 1 of 8">
+              <img src="assets/img/work/beyond-survival/01.webp"
+     srcset="assets/img/work/beyond-survival/01-480.webp 480w, assets/img/work/beyond-survival/01.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="An End forest of pale trees and glowing pink flowers, with winged mobs overhead." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/02.webp" data-caption="A golden autumn forest with a golem walking between red flowers." aria-label="Open screenshot 2 of 8">
+              <img src="assets/img/work/beyond-survival/02.webp"
+     srcset="assets/img/work/beyond-survival/02-480.webp 480w, assets/img/work/beyond-survival/02.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="A golden autumn forest with a golem walking between red flowers." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/03.webp" data-caption="Mossy stone ruins beside a birch forest, a lantern lit at the doorway." aria-label="Open screenshot 3 of 8">
+              <img src="assets/img/work/beyond-survival/03.webp"
+     srcset="assets/img/work/beyond-survival/03-480.webp 480w, assets/img/work/beyond-survival/03.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="Mossy stone ruins beside a birch forest, a lantern lit at the doorway." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/04.webp" data-caption="A tall wooden hall lined with bookshelves and lanterns." aria-label="Open screenshot 4 of 8">
+              <img src="assets/img/work/beyond-survival/04.webp"
+     srcset="assets/img/work/beyond-survival/04-480.webp 480w, assets/img/work/beyond-survival/04.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="A tall wooden hall lined with bookshelves and lanterns." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/05.webp" data-caption="A stone throne room with moss on the floor and carved wall symbols." aria-label="Open screenshot 5 of 8">
+              <img src="assets/img/work/beyond-survival/05.webp"
+     srcset="assets/img/work/beyond-survival/05-480.webp 480w, assets/img/work/beyond-survival/05.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="A stone throne room with moss on the floor and carved wall symbols." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/06.webp" data-caption="A large dark ship at sea under a full moon." aria-label="Open screenshot 6 of 8">
+              <img src="assets/img/work/beyond-survival/06.webp"
+     srcset="assets/img/work/beyond-survival/06-480.webp 480w, assets/img/work/beyond-survival/06.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="A large dark ship at sea under a full moon." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/07.webp" data-caption="A moonlit birch clearing with a rider on a purple horse." aria-label="Open screenshot 7 of 8">
+              <img src="assets/img/work/beyond-survival/07.webp"
+     srcset="assets/img/work/beyond-survival/07-480.webp 480w, assets/img/work/beyond-survival/07.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="A moonlit birch clearing with a rider on a purple horse." loading="lazy" decoding="async">
+            </button>
+          </li>
+          <li class="reel__frame">
+            <button type="button" data-shot data-full="assets/img/work/beyond-survival/08.webp" data-caption="A dark mushroom forest with glowing eyes between the trees." aria-label="Open screenshot 8 of 8">
+              <img src="assets/img/work/beyond-survival/08.webp"
+     srcset="assets/img/work/beyond-survival/08-480.webp 480w, assets/img/work/beyond-survival/08.webp 1200w" sizes="(max-width: 64rem) 76vw, 30rem"
+     width="1200" height="675" alt="A dark mushroom forest with glowing eyes between the trees." loading="lazy" decoding="async">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="scene" id="work-mob-prison" style="--accent:#5BB3F5" data-scene data-accent="#5BB3F5">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">10</span><span>Bedrock realm</span></p>
+        <h3 class="scene__title">Mob Prison</h3>
+        <p class="scene__line">A realm that grew past 600 players.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Project Manager</span><span class="chip">Head Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">A Minecraft Bedrock realm with over 600 players. Prisons, plots, dungeons and arenas where you fight custom mobs with new weapons, all on one persistent server.</p>
+        
+        
+        <div class="facts"><dl class="facts__row"><div class="fact"><dt>Players</dt><dd><b>600+</b></dd></div></dl></div>
+        <a class="cta" href="https://youtu.be/vMJob-XLvck" target="_blank" rel="noopener"><span>Watch the trailer</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster poster--shot" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/mob-prison/01.webp"
+     srcset="assets/img/work/mob-prison/01-480.webp 480w, assets/img/work/mob-prison/01.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="450" alt="A harbour town of stone and timber buildings around a turquoise canal." loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+    </article>
+    <article class="scene" id="work-kaioga-project" style="--accent:#B48CFF" data-scene data-accent="#B48CFF">
+      <header class="scene__head">
+        <p class="scene__tag"><span class="scene__num">11</span><span>In development</span></p>
+        <h3 class="scene__title">Kaiōga’s Project</h3>
+        <p class="scene__line">The big one. Still building it.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Project Manager</span><span class="chip">Head Developer</span></p>
+      </header>
+      <div class="scene__body">
+        <p class="scene__text">A story-driven MMORPG inside Minecraft: an open world with its own terrain and structures, and a reworked combat system with new stats, weapons and gear. It’s my own long-running project, and there’s a lot of it still to build.</p>
+        
+        
+        <div class="facts"><dl class="facts__row"><div class="fact"><dt>Status</dt><dd><b>In development</b></dd></div></dl></div>
+        <a class="cta" href="https://discord.gg/32VWj26XBD" target="_blank" rel="noopener"><span>Follow along on Discord</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+      </div>
+      <div class="scene__side">
+        <figure class="poster poster--shot" data-poster>
+          <div class="poster__frame" data-tilt>
+            <img src="assets/img/work/kaioga-project/01.webp"
+     srcset="assets/img/work/kaioga-project/01-480.webp 480w, assets/img/work/kaioga-project/01.webp 800w" sizes="(max-width: 64rem) calc(100vw - 2.5rem), 52vw"
+     width="800" height="450" alt="A timber-framed building with a bell tower, a large castle rising behind it." loading="lazy" decoding="async">
+            <span class="poster__sheen" aria-hidden="true"></span>
+          </div>
+        </figure>
+      </div>
+      
+    </article>
     </div>
+    <p class="sec__note">Marketplace figures as listed in August and September 2026.</p>
   </section>
 
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Interested in working together? Let's chat.</p>
-      <a href="mailto:landomgonzalezbff@gmail.com" class="button">Email Me</a>
-    </div>
+  <section class="sec sec--tools" id="tools" data-section="tools">
+    <header class="sec__head">
+      <h2>Tools</h2>
+      <p>Things I’ve made for other creators. The fiddly parts of Bedrock shouldn’t have to be fiddly for everyone.</p>
+    </header>
+    <ol class="bench">
+      
+    <li class="tool" id="tool-bbmodel-unpack" style="--accent:#FFB13D">
+      <figure class="tool__icon"><img class="tool__img" src="assets/img/tools/bbmodel-unpack.svg" width="256" height="256" alt="An amber isometric cube lifting out of an open slate crate." loading="lazy" decoding="async"></figure>
+      <div class="tool__body">
+        <p class="tool__kind">VS Code extension and CLI</p>
+        <h3 class="tool__name">BBModel Unpack</h3>
+        <p class="tool__hook">Get everything out of a .bbmodel without opening Blockbench.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+        <p class="tool__text">Right-click a <code>.bbmodel</code> in VS Code and get a tidy folder of Bedrock geometry, animations, animation controllers and decoded textures. The converter underneath is its own dependency-free package with a CLI, so Regolith filters and build scripts can use it too.</p>
+        <ul class="points"><li>Matches Blockbench’s own export: mirrored UVs, box UV, locators, keyframe types, Molang</li><li>Tells you when something couldn’t convert exactly instead of quietly guessing</li><li>Reads every .bbmodel version from 3.x to 5.0</li></ul>
+        
+        
+        <p class="tool__links">
+          <a class="link" href="https://github.com/Kaioga5/BBModel-Unpack" target="_blank" rel="noopener"><span>Source on GitHub</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a><a class="link" href="https://marketplace.visualstudio.com/items?itemName=Kaioga.bbmodel-unpack" target="_blank" rel="noopener"><span>VS Code Marketplace</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+          
+        </p>
+      </div>
+    </li>
+    <li class="tool" id="tool-block-templates" style="--accent:#7E9BFF">
+      <figure class="tool__icon"><img class="tool__img" src="assets/img/tools/block-templates-logo.png" width="256" height="256" alt="Three blue isometric blocks stacked in a pyramid with a script B on the front." loading="lazy" decoding="async"></figure>
+      <div class="tool__body">
+        <p class="tool__kind">Block template library</p>
+        <h3 class="tool__name">Kaiōga’s Block Templates</h3>
+        <p class="tool__hook">Working custom blocks, made for Minecraft creators.</p>
+        <p class="roles"><span class="roles__label">My role</span><span class="chip">Developer</span></p>
+        <p class="tool__text">Vanilla packs don’t ship block files, so every custom block starts from nothing. This is a library of working block definitions you can copy: building blocks, plants, crops, redstone, lighting and interactive blocks, each one a matched behaviour and resource pack pair with a one-click <code>.mcaddon</code>. It exists to make building things easier for other creators.</p>
+        <ul class="points"><li>Runs on the stable platform, no experimental toggles</li><li>Every template says what it does and what it doesn’t</li><li>Older modules kept as they shipped, from 1.20.50 to 1.26.40</li></ul>
+        
+        <div class="facts facts--tool"><dl class="facts__row"><div class="fact"><dt>Templates</dt><dd><b>76</b></dd></div><div class="fact"><dt>Current module</dt><dd><b>1.26.50</b></dd></div><div class="fact"><dt>Licence</dt><dd><b>Free for noncommercial use</b></dd></div></dl></div>
+        <p class="tool__links">
+          <a class="link" href="https://github.com/Kaioga5/Kaioga-s-Block-Templates" target="_blank" rel="noopener"><span>Source on GitHub</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a>
+          
+        </p>
+      </div>
+    </li>
+    </ol>
   </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Kaiōga.</p>
+  <section class="sec sec--about" id="about" data-section="about">
+    <header class="sec__head sec__head--plain">
+      <h2>About</h2>
+    </header>
+    <div class="about">
+      <p class="about__lead">I’m a Minecraft Bedrock creator, mostly on the add-on side: entities, custom blocks, animation controllers, behaviour and resource packs, and the JSON and Molang under all of it.</p>
+      <div class="about__body">
+        <p>I work with partner studios on Marketplace releases, and I’m part of the team at Piki Studios.</p><p>The tools are a separate thing, and honestly the part I enjoy most. I like being part of the Bedrock creator community and making things easier for the people in it, whether that’s a converter, a template you can copy, or an answer to a question on Discord. I’m one of the three admins at Bedrock Add-Ons, and I write for the Bedrock Wiki for the same reason.</p><p>I work in Spanish and English.</p>
+        <ul class="places">
+          <li><a class="link" href="https://www.pikistudios.com/" target="_blank" rel="noopener"><span>Piki Studios</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a><span>Marketplace partner</span></li><li><a class="link" href="https://discord.gg/Q3jhmVSPcd" target="_blank" rel="noopener"><span>Bedrock Add-Ons</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a><span>Discord, one of three admins</span></li><li><a class="link" href="https://wiki.bedrock.dev/" target="_blank" rel="noopener"><span>Bedrock Wiki</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a><span>Contributor</span></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+  </section>
+</main>
+
+<footer class="night" id="contact" data-section="contact">
+  <div class="night__inner">
+    <h2>Say hi</h2>
+    <p class="night__lead">Working on something for Bedrock? Want a hand with an add-on or a tool? The quickest way to reach me is a Discord message.</p>
+    <div class="handle">
+      <svg class="icon icon--discord" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.3 5.4A16.6 16.6 0 0 0 15.2 4l-.5.9a15.4 15.4 0 0 0-5.4 0L8.8 4a16.6 16.6 0 0 0-4.1 1.4C2.1 9.3 1.4 13.1 1.7 16.8a16.7 16.7 0 0 0 5 2.6l1.1-1.7a10.8 10.8 0 0 1-1.7-.8l.4-.3a11.9 11.9 0 0 0 11 0l.4.3-1.7.8 1 1.7a16.7 16.7 0 0 0 5.1-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1Zm6.6 0c-1 0-1.8-.9-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1Z"/></svg>
+      <span class="handle__name" data-handle>kaioga.</span>
+      <button type="button" class="handle__copy" data-copy="kaioga." aria-label="Copy the Discord username"><svg class="icon icon--copy" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h9a2 2 0 0 1 2 2v9h-2V5H9V3Zm-3 4h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm0 2v10h9V9H6Z"/></svg><span data-copy-label>Copy</span></button>
+    </div>
+    <p class="handle__note">Discord username, full stop included. Not on Discord? <a class="link" href="mailto:landomgonzalezbff@gmail.com"><span>Email works too</span><svg class="arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 13 13 3M5.5 3H13v7.5"/></svg></a></p>
+    <p class="socials__label">Elsewhere</p>
+    <ul class="socials">
+      <li><a class="social" href="https://discord.gg/uJ6QKWFFNe" target="_blank" rel="noopener"><svg class="icon icon--discord" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.3 5.4A16.6 16.6 0 0 0 15.2 4l-.5.9a15.4 15.4 0 0 0-5.4 0L8.8 4a16.6 16.6 0 0 0-4.1 1.4C2.1 9.3 1.4 13.1 1.7 16.8a16.7 16.7 0 0 0 5 2.6l1.1-1.7a10.8 10.8 0 0 1-1.7-.8l.4-.3a11.9 11.9 0 0 0 11 0l.4.3-1.7.8 1 1.7a16.7 16.7 0 0 0 5.1-2.6c.4-4.3-.7-8-3-11.4ZM8.7 14.5c-1 0-1.8-.9-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1Zm6.6 0c-1 0-1.8-.9-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1Z"/></svg><span class="social__label">Discord server</span><span class="social__value">My community server</span></a></li><li><a class="social" href="https://www.youtube.com/@Kaioga5" target="_blank" rel="noopener"><svg class="icon icon--youtube" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 7.3a2.9 2.9 0 0 0-2-2C19.2 4.8 12 4.8 12 4.8s-7.2 0-9 .5a2.9 2.9 0 0 0-2 2C.5 9.1.5 12 .5 12s0 2.9.5 4.7a2.9 2.9 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a2.9 2.9 0 0 0 2-2c.5-1.8.5-4.7.5-4.7s0-2.9-.5-4.7ZM9.7 15.1V8.9l6 3.1-6 3.1Z"/></svg><span class="social__label">YouTube</span><span class="social__value">@Kaioga5</span></a></li><li><a class="social" href="https://x.com/Kaioga55" target="_blank" rel="noopener"><svg class="icon icon--x" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.6 3h3.1l-6.8 7.8L21.9 21h-6.3l-4.9-6.4L5 21H1.9l7.3-8.3L1.5 3H8l4.4 5.9L17.6 3Zm-1.1 16.2h1.7L6.9 4.7H5.1l11.4 14.5Z"/></svg><span class="social__label">X</span><span class="social__value">@Kaioga55</span></a></li><li><a class="social" href="https://github.com/Kaioga5" target="_blank" rel="noopener"><svg class="icon icon--github" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.1v3.2c0 .3.2.7.8.5A11.5 11.5 0 0 0 12 .5Z"/></svg><span class="social__label">GitHub</span><span class="social__value">Kaioga5</span></a></li>
+    </ul>
+    <p class="credits">Project key art and screenshots belong to their studios and to Mojang Studios, and are shown here to illustrate work I contributed to. Minecraft is a trademark of Mojang Synergies AB. This site is not affiliated with or endorsed by Mojang Studios or Microsoft.</p>
+    <p class="credits">&copy; 2026 Kaiōga</p>
+  </div>
+</footer>
+
+<dialog class="lightbox" data-lightbox aria-label="Screenshot viewer">
+  <button type="button" class="lightbox__close" data-lb-close aria-label="Close"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 3 10 10M13 3 3 13"/></svg></button>
+  <button type="button" class="lightbox__nav lightbox__nav--prev" data-lb-prev aria-label="Previous screenshot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+  <figure class="lightbox__figure">
+    <img data-lb-img alt="" decoding="async">
+    <figcaption><span data-lb-count></span><span data-lb-cap></span></figcaption>
+  </figure>
+  <button type="button" class="lightbox__nav lightbox__nav--next" data-lb-next aria-label="Next screenshot"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+</dialog>
+
+<script src="assets/js/site.js?v=2oc7j4" defer></script>
 </body>
 </html>

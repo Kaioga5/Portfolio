@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>Model-to-Particle</title>
+  <desc>A wireframe cube dissolving into a cluster of glowing square pixels.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2434"/>
+      <stop offset="1" stop-color="#0d1119"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6ee7ff"/>
+      <stop offset="1" stop-color="#4f8cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="26" fill="url(#bg)"/>
+
+  <!-- Wireframe cube on the left: the source model. -->
+  <g fill="none" stroke="#7f8ea8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M22 44 L44 32 L66 44 L44 56 Z"/>
+    <path d="M22 44 L22 76 L44 88 L44 56"/>
+    <path d="M66 44 L66 76 L44 88"/>
+  </g>
+
+  <!-- Leading face lifting away, mid-conversion. -->
+  <path d="M60 48 L80 38 L80 62 L60 72 Z" fill="url(#spark)" opacity="0.35"/>
+
+  <!-- Baked particle quads on the right: the output. -->
+  <g fill="url(#spark)">
+    <rect x="76" y="30" width="16" height="16" rx="2"/>
+    <rect x="96" y="42" width="13" height="13" rx="2" opacity="0.85"/>
+    <rect x="78" y="54" width="13" height="13" rx="2" opacity="0.9"/>
+    <rect x="97" y="64" width="10" height="10" rx="2" opacity="0.7"/>
+    <rect x="80" y="76" width="10" height="10" rx="2" opacity="0.6"/>
+    <rect x="98" y="86" width="7" height="7" rx="1.5" opacity="0.45"/>
+    <rect x="84" y="94" width="7" height="7" rx="1.5" opacity="0.35"/>
+  </g>
+
+  <!-- Single emission point: the one command that spawns all of it. -->
+  <circle cx="64" cy="100" r="4.5" fill="#e8f4ff"/>
+  <circle cx="64" cy="100" r="9" fill="none" stroke="#6ee7ff" stroke-width="2" opacity="0.5"/>
+</svg>
