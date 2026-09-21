@@ -46,8 +46,7 @@ export const site = {
       'blocks, animation controllers, behaviour and resource packs, and the JSON and Molang ' +
       'under all of it.',
     body: [
-      'I work with partner studios on Marketplace releases, and I’m part of the team at ' +
-      'Piki Studios.',
+      'I work with partner studios on Marketplace releases.',
       'The tools are a separate thing, and honestly the part I enjoy most. I like being ' +
       'part of the Bedrock creator community and making things easier for the people in ' +
       'it, whether that’s a converter, a template you can copy, or an answer to a question ' +
